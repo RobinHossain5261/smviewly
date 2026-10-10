@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /signin
+Disallow: /signup
+Disallow: /search
+Disallow: /search-preview
+Disallow: /media
+Disallow: /download
+Disallow: /reload-captcha
+
+Sitemap: https://smviewer.org/sitemap.xml
+Sitemap: https://smviewer.org/sitemap-posts.xml

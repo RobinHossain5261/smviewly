@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import './admin.css';
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url('/fonts/jakarta/plus-jakarta-sans-latin-wght-normal.woff2') format('woff2');
+}
+
+@source '../views/**/*.blade.php';
+@source '../js/**/*.js';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    
+    /* Dynamically controlled custom variables mapped to Tailwind colors */
+    --color-brand-primary: var(--primary-color, #064b47);
+    --color-brand-secondary: var(--secondary-color, #5ab298);
+}
+
+/* Glassmorphism Cards */
+@utility glass-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+}
+
+@utility glass-input {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    transition: all 0.2s;
+    
+    &:focus {
+        border-color: var(--primary-color, #064b47);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(6, 75, 71, 0.12);
+    }
+}
+
+/* Shimmer Loading Animation */
+@keyframes shimmer {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@utility animate-shimmer {
+    background: #f1f5f9;
+    animation: shimmer 1.5s infinite ease-in-out;
+}
+
+/* Custom Scrollbar for Light Mode */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Hide scrollbar for horizontal highlight/story rows */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Keep placeholder copy readable on the shared light form surfaces. */
+input::placeholder,
+textarea::placeholder {
+    color: #64748b;
+    opacity: 1;
+}
+
+/* Responsive contact confirmation toast. */
+.toastify.sm-toast-success { display:flex; align-items:flex-start; gap:14px; width:390px; max-width:calc(100vw - 32px); padding:18px; border:1px solid #c9e4d3; border-left:4px solid #2d8c60; border-radius:14px; color:#234f3c; box-shadow:0 10px 36px #183d2926; font-family:inherit; z-index:10000; }
+.sm-toast-content { display:flex; align-items:flex-start; gap:12px; flex:1; min-width:0; }
+.sm-toast-content>i { font-size:26px; flex-shrink:0; color:#2d8c60; }
+.sm-toast-content strong { display:block; font-size:14px; font-weight:750; line-height:1.5; margin-bottom:4px; }
+.sm-toast-content span { display:block; font-size:12px; line-height:1.7; overflow-wrap:anywhere; }
+.toastify.sm-toast-success .toast-close { flex-shrink:0; display:grid; place-items:center; width:28px; height:28px; padding:0; opacity:1; color:#547c65; border-radius:6px; cursor:pointer; }
+.toastify.sm-toast-success .toast-close:focus-visible { outline:2px solid #2d8c60; outline-offset:2px; }
+@media(max-width:640px) { .toastify.sm-toast-success { width:calc(100vw - 32px); padding:14px; } }
+@media(prefers-reduced-motion:reduce) { .toastify.sm-toast-success { transition:none; } }

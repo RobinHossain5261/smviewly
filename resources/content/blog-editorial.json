@@ -1,0 +1,302 @@
+[
+    {
+        "title": "Public Social Media Research: A Practical Guide to Privacy and Context",
+        "sections": [
+            [
+                "Start with a question, not a collection",
+                "Public social media can help you understand a company announcement, compare the way brands explain a product, or locate the original source of a shared image. It becomes less useful when you collect everything without deciding what you need. Before opening a tool, write a short research question and define which sources could answer it. A question such as how a publisher announced an event is narrower and easier to verify than a request to study its entire online presence. Decide what would count as useful evidence, what would be outside scope, and when you will stop searching."
+            ],
+            [
+                "Separate public visibility from guaranteed access",
+                "An item you can see while signed into a social account may not be available to a visitor who is signed out. A platform can restrict a page by location, age, membership, or a login requirement. A lookup service can also encounter a temporary failure. Treat public visibility as a condition to check rather than a promise that every tool will return the same result. SM Viewer works with available public content; it does not unlock private profiles or restricted groups. If a lookup returns nothing, record that outcome accurately instead of claiming the original source has no content."
+            ],
+            [
+                "Choose the tool that matches the source",
+                "SM Viewer organizes tools by platform and purpose. A Facebook page is different from an individual post, and a company profile is different from a job search. Start with the source you have, then choose the matching tool. Read the input guidance before pasting a link. Some tools accept a username or page name; others expect a specific address or identifier. Entering a profile address into a post tool can create an avoidable failure. Keep the original source address beside your notes so you can return to it if the result needs clarification or a different tool."
+            ],
+            [
+                "Use a small, repeatable research record",
+                "For each useful result, record the source URL, the account or organization name, the date you accessed it, and a sentence describing what you observed. Separate direct observations from your interpretation. A post announcing a discount is an observation; a conclusion that the company is struggling is an interpretation that requires more evidence. This distinction helps colleagues review your work and prevents uncertain claims from becoming facts through repetition. You do not need a complicated database for a small project. A simple document or spreadsheet with consistent fields is often enough to preserve the context that screenshots alone lose."
+            ],
+            [
+                "Check the original context before drawing conclusions",
+                "A public post can be a reply, a repost, a quotation, a joke, or part of a longer thread. A thumbnail may omit the caption that explains an image. Before using an item as evidence, inspect the surrounding context where it is available. Compare the post date with the event date, and check whether the account actually belongs to the organization you are researching. If the tool does not expose enough context, follow the original source or mark the item as incomplete. Avoid presenting a cropped image as a complete account of what its creator said."
+            ],
+            [
+                "Understand what privacy does and does not mean",
+                "Not connecting your social account reduces the chance that a lookup is mixed with actions performed through that account. It does not establish that your device is invisible to every service involved. Websites, network providers, and data services may process operational information. Do not claim absolute anonymity simply because a tool does not ask for a password. Read the service privacy policy and keep sensitive research out of inappropriate systems. In SM Viewer, public-content access is a practical workflow boundary. It is not a guarantee that no organization anywhere can associate any network activity with your device."
+            ],
+            [
+                "Respect platform-specific audience choices",
+                "Different networks expose different kinds of public information. X distinguishes public posts from protected posts, while LinkedIn lets members control which profile sections are eligible for public display. These choices should shape your research expectations. Do not interpret a limited preview as a complete profile or try to work around an owner's privacy settings. When a field is missing, it may be deliberately hidden or simply unavailable to the current request. Record only what the source actually provides. The absence of a field is not evidence that a person has never supplied that information elsewhere."
+            ],
+            [
+                "Keep only the information your project needs",
+                "A public result can contain personal information that is irrelevant to your question. Avoid copying names, contact details, or photographs of unrelated individuals into a research archive just because they are visible. Minimize the material you retain and set a review date for deleting records you no longer need. If you share findings with a colleague, include the necessary source context but remove unrelated personal details. This is an editorial practice as much as a privacy practice: a focused record is easier to understand, less likely to be misused, and more useful when the project is revisited."
+            ],
+            [
+                "Review uncertainty before publishing",
+                "Before a report leaves your workspace, check whether each statement is directly supported by a source. Label uncertain interpretations and explain relevant limitations, such as a partial feed or a source that required a login. Ask whether a reader could mistake an empty lookup for proof of absence. Keep quotations brief and accurate, and link to the original public item when it is appropriate to do so. A responsible research report does not need to sound perfectly certain. Explaining what you could verify, what you could not access, and what remains an inference makes the work more credible."
+            ],
+            [
+                "A workable example",
+                "Suppose you are comparing how three public brands announced a new product. Choose a fixed date range and collect a small number of relevant page posts from each brand. Record the links, announcement dates, and the wording you need to compare. Note whether a result was unavailable rather than filling the gap with a guess. Summarize differences in the announcements without attributing motives you cannot verify. Before sharing your comparison, revisit the original posts and remove unrelated personal information from your notes. This modest process produces a clearer result than gathering hundreds of posts and attempting to invent a story afterward."
+            ],
+            [
+                "Further reading",
+                "For platform-specific visibility rules, consult the official documentation: <a href=\"https://help.x.com/en/safety-and-security/public-and-protected-posts\">X: public and protected posts</a> and <a href=\"https://www.linkedin.com/help/linkedin/answer/a518980\">LinkedIn: public profile visibility</a>. These sources explain audience settings; they do not guarantee that a third-party lookup will return every eligible item."
+            ]
+        ],
+        "slug": "the-definitive-guide-to-anonymous-social-media-research-and-digital-privacy"
+    },
+    {
+        "title": "Saving Public Social Media Content Without Losing Its Context",
+        "sections": [
+            [
+                "Decide what your archive is for",
+                "An archive can support a creative project, help a team revisit its own announcements, or preserve public references for a research task. Each purpose needs a different amount of material. Decide what you want to retain before downloading files. For a mood board, a few images and source links may be sufficient. For a record of your organization's campaign, captions and dates may matter as much as the media. Write down the purpose and avoid treating every interesting post as something that must be stored indefinitely. A smaller collection with useful context is often more valuable than an enormous folder."
+            ],
+            [
+                "Keep the source address with the file",
+                "A downloaded photo may contain no useful information about the post that introduced it. Save the original public URL alongside the file, together with the creator or organization name and your access date. If the material came from a thread or album, record that relationship rather than describing it as an isolated item. A source link gives future readers a way to check context and attribution. It also helps you notice when a post has changed or disappeared. Do not rely on a filename supplied by a media server to identify the original creator or publication date."
+            ],
+            [
+                "Use the dedicated tool for the content type",
+                "SM Viewer separates platform tools because a profile lookup and a media lookup answer different questions. Facebook Page Photos is more appropriate for available page images than a general company research workflow. X Media Viewer focuses on media available from a public profile. Read the tool's input guidance and verify that you are using a compatible name or URL. If the result contains a preview but no downloadable file, treat that as a limitation of the available response. Repeatedly changing tools does not establish permission to access a private item or recreate a missing original."
+            ],
+            [
+                "Check the file you actually received",
+                "Open a saved file before adding it to a working archive. Confirm that it is the intended item, that it displays or plays correctly, and that its format is suitable for your task. A preview image can be smaller than an original upload, and a video may be available in only one version. Do not label a file as high resolution merely because a tool displayed an attractive thumbnail. Record the dimensions or format when those details matter. If a project requires a particular quality, ask the owner for the original rather than assuming a public copy will meet that requirement."
+            ],
+            [
+                "Make filenames readable and consistent",
+                "Descriptive filenames help you locate material without repeatedly opening every file. A pattern containing the project, source name, approximate date, and a short subject is usually enough. Avoid including sensitive information or making the name so long that it becomes inconvenient to move between systems. Use a separate notes document for complex details. If several files come from one post, number them and preserve their order where that order is meaningful. Consistency matters more than choosing an elaborate naming system. A colleague should be able to understand your folder without receiving a long explanation of how it works."
+            ],
+            [
+                "Separate a reference copy from an approved asset",
+                "An image that inspires your design is not automatically an asset you can publish in a campaign. Keep reference material in a clearly named area and approved production assets in another. Record the basis for using an approved asset, such as ownership or direct permission from its creator. This separation makes accidental reuse less likely when files move between people or projects. Public availability alone does not settle reuse rights. If permission is unclear, preserve the source link for research and ask the creator before treating the media as something your team is entitled to republish."
+            ],
+            [
+                "Retain enough context to avoid misrepresentation",
+                "Captions, dates, and surrounding discussion can change the meaning of a visual. When context matters to your archive's purpose, save a short note explaining where the item appeared and what it referred to. A quotation should be accurate and distinguish the author's words from your interpretation. If you crop or annotate an image for internal review, retain an unaltered reference copy where you are permitted to do so. Do not silently transform a reference into evidence of something its source never claimed. Clear notes can prevent misunderstandings long after the person who collected the file has left the project."
+            ],
+            [
+                "Plan for storage and cleanup",
+                "Every new copy increases the amount of material your team must manage. Decide where the archive belongs, who needs access, and when it should be reviewed. Keep important work in an appropriate backup system, but avoid duplicating the entire collection across personal devices without a purpose. Periodically remove obsolete references, inaccessible links that no longer support a useful record, and files you are not entitled to retain. Maintain a small index of important items so you can distinguish a missing file from one deliberately removed. An archive should support the project rather than becoming an unexplained collection that nobody owns."
+            ],
+            [
+                "Handle personal information with care",
+                "Public media may show individuals who have nothing to do with your task. Consider whether their names, faces, or contact information are necessary to retain. Avoid organizing an archive around unrelated people's personal details. When you share a reference with a colleague, explain its purpose and include only the information needed for that purpose. Be especially careful with material involving children or sensitive situations. The fact that a file can be downloaded does not determine whether keeping or circulating it is appropriate. Thoughtful selection is part of producing a useful, responsible archive."
+            ],
+            [
+                "An example of a manageable collection",
+                "Imagine your team is studying public launch announcements for a design review. Create one project folder with a notes file and a separate references directory. For each selected item, record the source link, the account name, your access date, and why it is relevant. Check the saved media and identify any quality limitations. Keep references separate from files approved for reuse. After the review, remove items that did not contribute to the work and set a date to revisit what remains. This process is simple enough to maintain and detailed enough that someone else can understand the collection later."
+            ],
+            [
+                "What a viewer cannot promise",
+                "A public-content viewer cannot guarantee that every original file remains available or that a particular resolution will be returned. Availability can change when a source removes content, changes access settings, or limits requests. Your own records should reflect those limitations rather than making claims about completeness. Use the tool to access what is available, and contact the owner when your project needs an authoritative original or explicit permission."
+            ]
+        ],
+        "slug": "mastering-social-media-media-archiving-how-marketers-and-creators-preserve-hd-content-safely"
+    },
+    {
+        "title": "How Public Content Lookups Work: Requests, Proxies, and Practical Limits",
+        "sections": [
+            [
+                "A lookup is a request, not a private-account shortcut",
+                "When you submit a public profile name or link, a lookup tool asks a data service for information associated with that input. The service may return profile fields, posts, media references, or an explanation that the request could not be completed. This is a useful abstraction, but it should not be confused with unrestricted access to the source platform. A lookup operates within the content and access conditions available to its upstream service. It cannot make a private account public simply because you supplied its address. Understanding this distinction helps you interpret both useful results and ordinary failures."
+            ],
+            [
+                "The browser begins with a form submission",
+                "In SM Viewer, the form includes your input, the selected platform, the tool identifier, and a security code. The application validates those fields before starting a lookup. Platform and tool identifiers matter because they determine what kind of information the request asks for. A page-photo tool does not have the same purpose as a profile-information tool. Validation catches missing or unsuitable inputs early, but it does not establish that the source item is available. After validation, the application still needs a response from the data service before it can display a meaningful preview."
+            ],
+            [
+                "The server maps your choice to a payload",
+                "A tool catalog connects user-facing options to the request fields used by the data service. A platform may expect a name, a query, or an identifier, while a tool can specify the requested entity and content section. This mapping is why the input guidance changes between tools. It also allows the interface to remain consistent without pretending that every network has the same structure. When you enter a link, choose the tool intended for that link's content. A carefully mapped request reduces avoidable errors; it does not guarantee an identical response every time the source changes."
+            ],
+            [
+                "What a proxy contributes",
+                "A proxy sends a request through another server rather than making the browser contact the source directly for that step. It can be part of the data service's access workflow or the application's media delivery path. This changes where a particular request originates, but it does not justify an absolute claim about anonymity or the absence of operational records. Different services may process connection information for their own purposes. Read the relevant privacy policy rather than inferring that all logging disappears. A proxy is a technical component in a request path, not a universal promise of invisibility."
+            ],
+            [
+                "Why profiles can need several requests",
+                "A source may expose profile information separately from posts, photos, videos, or other sections. The application can request those sections independently and combine successful responses into a useful result. Some sections may fail while others return data. This means a visible profile card does not guarantee a complete feed, and a missing video tab does not prove that the account has never published videos. Treat the result as the information returned for that lookup. If completeness matters to your project, verify important items against their original public sources and describe any unavailable sections in your notes."
+            ],
+            [
+                "Normalization turns different responses into one interface",
+                "Networks and upstream services can use different names and nesting structures for similar information. A normalization layer extracts fields the interface understands, such as a display name, a profile image, a caption, or a media address. The result is easier to browse, but normalization cannot invent missing fields. It also needs to handle unexpected data conservatively. If a response contains only a thumbnail, displaying a thumbnail is more honest than presenting it as an original video. Good interfaces show what is known and allow the user to distinguish missing data from a verified empty result."
+            ],
+            [
+                "A preview and a downloadable file are different",
+                "A media preview may use an image or video reference returned by the lookup. Downloading requires an available file address and a delivery path that can provide the file to your device. Some media addresses expire or depend on source restrictions, so a preview that worked earlier may later fail. Quality depends on the version supplied by the source; a delivery service does not reconstruct an original that it never received. Review saved files before relying on them. If you need production-quality material, ask the owner for an approved original instead of assuming the public response is sufficient."
+            ],
+            [
+                "Timeouts and limits are ordinary operating conditions",
+                "A lookup can fail because a data service is slow, a source requires authentication, or requests are temporarily limited. A timeout indicates that a response did not arrive within the application's allowed period. It is not necessarily proof that the link is invalid. Similarly, a temporary request limit does not mean a platform has permanently removed a feature. Check your input, allow time before retrying, and avoid repeatedly submitting the same request at high speed. If a problem persists, provide support with the tool name and public link, without sending passwords or private session information."
+            ],
+            [
+                "Security checks protect the service's workflow",
+                "The security code in the form helps limit automated abuse of the public lookup interface. Enter it as shown, and refresh it when necessary. The application can also limit request frequency. These controls are operational safeguards, not evidence that a lookup is guaranteed to succeed or that the returned source is trustworthy. They should be explained plainly to the user. A well-designed interface makes the check easy to complete and reports a validation failure separately from a data-service failure, so the user knows whether to correct the form or investigate the source."
+            ],
+            [
+                "Use failures as information, not a reason to bypass boundaries",
+                "Suppose a public page lookup returns a name and an image but no recent posts. Check whether you requested the correct section and whether the source can be accessed outside your logged-in session. Record the partial result rather than repeatedly trying unrelated tools. If the original content is private or restricted, stop. For a persistent technical issue, report the public address, time of the request, and visible error message to support. This approach respects access boundaries and gives the operator information that can help diagnose the problem without exposing your account credentials."
+            ],
+            [
+                "What to expect from the interface",
+                "The most useful expectation is modest: the tool should validate your input, request the appropriate available public content, explain failures clearly, and display successful results consistently. It should not promise perfect coverage, unlimited upstream capacity, or identical availability across networks. Knowing the request path makes you better at choosing tools and interpreting results, even if you never need to inspect the underlying code."
+            ]
+        ],
+        "slug": "understanding-server-infrastructure-reverse-proxies-and-high-throughput-scraper-performance"
+    },
+    {
+        "title": "A Practical Multi-Platform Content Review for Small Teams",
+        "sections": [
+            [
+                "Start with a decision your team needs to make",
+                "A content review is most useful when it supports a concrete decision. You might want to understand whether product announcements are clear, which questions customers raise in public, or how consistently your organization describes a service. Define that decision before choosing platforms or collecting examples. A small team rarely needs a complete archive of every public post. It needs enough relevant material to understand a problem and decide what to improve. Write a short brief that names the question, the audience, the sources, and the date range so everyone reviews the same kind of evidence."
+            ],
+            [
+                "Choose comparable sources",
+                "Comparing a company's LinkedIn profile with a single Facebook photo may not reveal much about its communications. Select comparable units, such as launch announcements from the same period or public profile descriptions for the same organization. Include only sources that serve your question. If one platform has no available result, note the gap rather than replacing it with an unrelated example. A consistent sampling method makes a small review more credible. It also prevents a team's favorite post from receiving disproportionate attention simply because it is easy to find or visually attractive."
+            ],
+            [
+                "Use platform tools to locate the right material",
+                "SM Viewer provides different entry points for public Facebook pages, X profiles and media, Threads posts, and LinkedIn companies. Choose a tool based on the type of source you want to inspect. Read the input guidance before starting the lookup, then keep the original link beside your notes. Do not assume that every platform will return the same fields or an equally complete feed. The source may make some sections unavailable. Your review should describe the material you could inspect, not imply that a limited tool response represents the organization's entire activity."
+            ],
+            [
+                "Create a simple review sheet",
+                "Use a small set of fields that match the decision in your brief. For an announcement review, you might record the date, audience, main message, requested action, supporting media, and any public question relevant to clarity. Add a source link and a short note separating observation from interpretation. Avoid filling the sheet with metrics you cannot verify or comparing numbers that were measured under different conditions. A consistent review sheet helps different people contribute without turning the exercise into a contest of impressions. Keep it understandable enough that a colleague can explain each field without a separate manual."
+            ],
+            [
+                "Review wording before visual polish",
+                "An attractive image does not automatically make a post useful. Ask whether the message tells the reader what happened, why it matters, and what they can do next. Look for unexplained abbreviations, missing dates, ambiguous links, or a mismatch between the caption and the image. Consider the audience's likely starting knowledge instead of judging the post only from an insider's perspective. A review of clarity is easier to act on than a vague claim that the content feels old-fashioned. Record specific wording or context problems and connect each one to a possible improvement."
+            ],
+            [
+                "Keep platform differences in view",
+                "Networks encourage different formats, audiences, and patterns of interaction. A short public update may work for one purpose while a longer company explanation supports another. Do not force every platform into an identical posting template merely to make the review sheet easier to fill. Compare the underlying message and the intended action, while allowing the presentation to suit the source. When a field is not available, mark it as unavailable rather than assigning a zero. A missing number, a hidden reply, or a partial profile preview should not be mistaken for evidence of poor performance."
+            ],
+            [
+                "Discuss examples without inventing audience behavior",
+                "A small sample of public posts does not reveal every reason a person reads, clicks, or ignores content. Avoid claiming that a design caused a business outcome unless you have appropriate evidence. Instead, use careful language: a link is difficult to locate, the next step is unclear, or an announcement omits essential context. These are observations your team can review directly. If you want to test a change, define a separate measurement plan using data your organization is entitled to access. Keep that test distinct from the public-content review so a useful discussion does not become an unsupported performance claim."
+            ],
+            [
+                "Turn findings into a small action list",
+                "At the end of the review, select a few improvements with clear owners. You might standardize the way dates appear in announcements, add a consistent support link, or improve the wording of a product description. Give each action a reason connected to an observed example. Avoid producing a long list that nobody has time to implement. A focused review can produce two or three worthwhile changes and still be successful. Set a date to revisit the changes, and preserve a small set of before-and-after references so the next review can discuss actual work rather than reconstructing what people remember."
+            ],
+            [
+                "Keep references and rights separate",
+                "Your review may include public screenshots or saved media for internal discussion. Keep source links and creator information with those references. Do not treat a competitor's image or another creator's video as an approved production asset. If your team wants to reuse material, establish permission separately and record any conditions. Limit personal information in the review sheet to what the project needs. This distinction is practical: it prevents a reference folder from becoming a source of accidental unauthorized reuse when a designer or marketer later searches for something convenient to publish."
+            ],
+            [
+                "A useful review rhythm",
+                "For a small team, a short scheduled review is usually easier to maintain than continuous monitoring. Choose a repeatable period and revisit the same question or a clearly defined new one. Keep the sample size manageable, explain any source limitations, and spend most of the meeting deciding what to improve. Record decisions in plain language. If the team cannot explain why a collected item matters, remove it from the working set. The purpose of a multi-platform review is to make the next communication clearer, not to accumulate an impressive-looking collection of public content."
+            ],
+            [
+                "An example to adapt",
+                "A local organization preparing an event could review its recent public announcements across two platforms. The team checks whether each post includes the date, location, registration link, and contact information. It records ambiguous examples, selects a common wording pattern, and updates its next announcement. The review succeeds because it supports a specific task, not because it covers every network or claims to predict an algorithm."
+            ]
+        ],
+        "slug": "social-media-strategy-for-2026-building-authentic-connections-across-multiple-platforms"
+    },
+    {
+        "title": "Choosing the Right Facebook Tool for a Public Link",
+        "sections": [
+            [
+                "Identify what your link points to",
+                "A Facebook page, a personal profile, a group, and an individual post are different starting points. Choosing the matching tool helps the application request the content you actually want to inspect. Before pasting a link, ask what you expect to see: a page description, a person's public information, an available group overview, or one particular post. This short check prevents a common mistake: using a general page address when the tool expects a specific post permalink. The tool's input guidance should be your first reference, especially when a shared address has an unfamiliar structure."
+            ],
+            [
+                "Use Page Viewer for a public organization page",
+                "Page Viewer is the starting point for available information about a public brand, publisher, community, or organization page. It is not a promise that every section of the page will be returned. If your purpose is to review page posts or media, the dedicated page tools make that request more specific. Keep the source page address in your notes and check that the result belongs to the organization you intended. Similar names can be ambiguous. A successful response is useful only if you have confirmed the identity of the source rather than relying on a display name alone."
+            ],
+            [
+                "Choose the page section you need",
+                "Page Posts, Page Photos, Page Reels, and Page Videos focus on different kinds of available content. Page About requests public description and contact-related information, while Page Events focuses on available event information. Select the section that serves your task instead of trying every option without a purpose. A page can expose some information and restrict other sections. If a tool returns no media, do not conclude that the organization has never published any. Record what was returned, and check the original public source if you need to verify an important item or understand a gap."
+            ],
+            [
+                "Keep personal profiles separate from pages",
+                "A profile belongs to a person and can have different visibility settings from an organization page. Use Profile Viewer, Profile Posts, or Profile Photos when your source is a personal profile. These tools are limited to content available publicly to the lookup. A post visible to you as a friend may not be available outside your signed-in account. Do not provide passwords, browser cookies, or personal session information to try to access it. If the source does not make the information public, respect that boundary and choose another source appropriate to your research question."
+            ],
+            [
+                "Use group tools only for available public content",
+                "Group Viewer requests available group information, and Group Posts focuses on posts the source makes accessible. The input guidance may accept a group ID or a group URL. Private groups and member-only material are outside this public lookup workflow. Even a group described as public may present login barriers or other limits to an external request. Treat an unavailable response as an access limitation, not as an invitation to bypass the group's conditions. For legitimate work involving a group you administer, use approved access methods rather than trying to turn a public viewer into an authenticated membership tool."
+            ],
+            [
+                "Copy a post permalink for a specific item",
+                "If you want to inspect one post, open that post and use its sharing option or browser address to obtain the specific link. A page homepage address points to a collection, not necessarily the item you have in mind. Post Viewer requests an individual public post, while Post Comments focuses on available discussion for the post. Check the result's source and context before using it in a report. A short excerpt or thumbnail may not show the full caption, thread, or conversation. Follow the original link when the returned preview is insufficient to support your intended conclusion."
+            ],
+            [
+                "Complete the form without adding private information",
+                "Paste the supported address or name into the tool page, then enter the security code shown beside the form. Refresh the code if it is difficult to read. Submit once and allow the lookup to finish. The security check helps protect the service against abuse; it does not guarantee a successful upstream result. Do not include passwords, account recovery details, or private contact information in the input field. If the tool reports a validation problem, correct the form. If it reports source unavailability, review the link and the source's visibility rather than repeatedly submitting identical requests."
+            ],
+            [
+                "Understand why a lookup can be incomplete",
+                "A source can require a login, restrict access by age or location, remove content, or temporarily limit requests. The upstream data service can also be unavailable. These conditions mean that a public-looking link is not a guarantee of a complete response. A page viewed through your own account may appear different from what a logged-out lookup can retrieve. Describe the outcome accurately: the tool returned a partial result, or a section was unavailable. Avoid claiming that the account has no posts simply because the lookup did not provide them. This distinction matters when you share research with others."
+            ],
+            [
+                "Review downloads before relying on them",
+                "When a result includes an available downloadable file, check that it is the intended media and that it opens correctly on your device. File format and resolution depend on the source. A small preview does not guarantee a larger original is accessible, and a playable clip does not automatically provide every version of the upload. Save only media you own or have permission to keep. Preserve the original public post link for context and attribution. If a project requires an authoritative original or a particular production quality, contact the owner rather than assuming a public file will satisfy the requirement."
+            ],
+            [
+                "A quick decision example",
+                "Suppose you are researching a public publisher's announcement. Begin with Page Viewer to confirm the publisher, then use Page Posts to locate available recent announcements. If a colleague sends one specific announcement, switch to Post Viewer using its permalink. If you need the discussion, use Post Comments for that same post. Record which tools you used and any missing sections. Keep the original links in your research notes and explain source limitations when reporting the findings. This sequence follows the content type instead of guessing, and it keeps the scope narrow enough that someone else can repeat your work."
+            ],
+            [
+                "Keep the task focused",
+                "You rarely need every Facebook tool for one question. Choose the smallest workflow that provides the information you need, check the original context, and stop when the task is complete. If the required content is restricted or unavailable, acknowledge that limit. A public-content viewer is most useful when you treat it as a way to inspect available material, not as a promise of unrestricted access to every page or account."
+            ]
+        ],
+        "slug": "choosing-the-right-facebook-tool-for-a-public-link"
+    },
+    {
+        "title": "A Practical Checklist for Saving Public Social Media References",
+        "sections": [
+            [
+                "Write down why the reference matters",
+                "A useful reference collection starts with a reason for keeping each item. You might be studying a visual style, checking the wording of an announcement, or saving an example of a clear explanation. Record that reason in one sentence before downloading anything. It helps you decide whether the item belongs in the collection and makes it easier to remove weak references later. Without this small note, a folder can become a mixture of unrelated images that feels inspiring for a moment but offers little practical value when you need to explain a decision to someone else."
+            ],
+            [
+                "Preserve the original public source",
+                "Copy the original post or profile address alongside the reference. Add the creator or organization name and the date you accessed the material. If the item belongs to a thread, album, or series, note that relationship so a future reader does not mistake it for an isolated statement. A source link provides a route back to the original context even when the downloaded file has an unhelpful server-generated name. It also helps distinguish a source that changed from a file that was collected incorrectly. Your notes should describe the source you actually reviewed, not an assumed original."
+            ],
+            [
+                "Choose a tool suited to the reference",
+                "In SM Viewer, different platforms and content types use different tools. A Facebook page-photo lookup and an X media lookup do not ask the source for the same thing. Start with the platform that published the item, then select the tool matching the content you have. Read the input guidance carefully, especially when a tool expects a username rather than an individual post URL. If a result does not contain the material you expected, check the input and source before trying again. Do not treat repeated requests as a method of working around private content or access restrictions."
+            ],
+            [
+                "Check the returned item before saving it",
+                "A search result can provide a profile image, a thumbnail, a caption, or a downloadable media file. These are not interchangeable. Open the preview where appropriate and confirm that it is the item you intended to collect. Check whether the surrounding caption changes its meaning. If a downloadable file is available, review the saved copy on your device. A thumbnail should not be labeled as a full-resolution original without evidence, and a file that cannot be opened should not be silently added to an archive as if it had been verified. A short check prevents confusing errors later."
+            ],
+            [
+                "Separate an idea from permission to reuse it",
+                "A public image can inspire a design without becoming an asset you are entitled to publish. Keep reference material separate from approved production files. If you plan to reuse a creator's photograph or video, establish permission and record any conditions. Do not assume that a download button settles those questions. For your own material, confirm that you have the version appropriate to the project. If permission is uncertain, keep the source link and discuss the idea in your notes rather than treating the file as something ready to place in a public campaign or product."
+            ],
+            [
+                "Use descriptive filenames and a small index",
+                "Choose a filename pattern that your collaborators can understand. A project name, source name, approximate date, and short subject are usually enough. Avoid putting unnecessary personal details into filenames, which can be exposed when files are shared. Keep a small index mapping each filename to its original link and your note about relevance. When multiple files come from one post, number them consistently and preserve meaningful order. The goal is easy retrieval, not an elaborate cataloging system. If the organization method takes longer to explain than the project itself, simplify it."
+            ],
+            [
+                "Keep enough context, but not everything",
+                "Save the context that supports your reason for collecting the reference. That might be a short caption excerpt, the date of an announcement, or a note that an image appeared as part of a public campaign. Avoid copying an entire unrelated conversation or personal profile into your record. Distinguish the creator's words from your interpretation so a colleague can evaluate them separately. If the source preview is incomplete, say so. A focused note is more valuable than a large pile of unexplained material, particularly when your team needs to revisit the collection weeks after the original research session."
+            ],
+            [
+                "Consider people shown in public media",
+                "A public photo can contain people whose presence is incidental to your project. Ask whether retaining their names, faces, or contact details is necessary for your purpose. Be especially thoughtful about sensitive situations and children. When sharing references internally, include only what the discussion needs and avoid creating an unnecessary record of unrelated individuals. Public availability does not automatically make every use appropriate. This is a practical editorial judgment as well as a privacy concern: removing irrelevant personal information makes the reference easier to discuss without distracting your team from the actual design or research question."
+            ],
+            [
+                "Set a review date for your collection",
+                "Reference folders grow quickly when nobody decides what should be removed. Schedule a review after the project milestone or at a reasonable interval. Delete files that no longer support the task, remove duplicate copies, and revisit material whose permission status was never resolved. Keep valuable work in the storage system appropriate for your team, with suitable access and backups. Avoid copying everything onto personal devices merely for convenience. A maintained collection should help the next person locate a useful example, not force them to work through hundreds of old files without knowing which ones mattered."
+            ],
+            [
+                "Try the checklist on one small project",
+                "For a presentation about clear public announcements, choose a handful of relevant examples rather than a whole feed. Record each source, explain why it matters, and confirm that the saved media opens correctly. Keep the references separate from files approved for reuse in the presentation. After the discussion, retain only the examples that support a lasting lesson and remove the rest. This gives your team a repeatable workflow without requiring specialized archival software. The same habits work for design references, public company research, and other small tasks that depend on media available from social platforms."
+            ],
+            [
+                "Know the limits of the available copy",
+                "Source availability can change, and a public viewer cannot guarantee every original file or every quality level. Record any limitation that matters to your project. If you need a precise original or specific permission, ask its owner. The reference collection is a working aid, not proof that the tool provided a complete or permanent record of the source."
+            ]
+        ],
+        "slug": "a-practical-checklist-for-saving-public-social-media-references"
+    }
+]
