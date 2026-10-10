@@ -8,11 +8,11 @@
             ],
             [
                 "Separate public visibility from guaranteed access",
-                "An item you can see while signed into a social account may not be available to a visitor who is signed out. A platform can restrict a page by location, age, membership, or a login requirement. A lookup service can also encounter a temporary failure. Treat public visibility as a condition to check rather than a promise that every tool will return the same result. SM Viewer works with available public content; it does not unlock private profiles or restricted groups. If a lookup returns nothing, record that outcome accurately instead of claiming the original source has no content."
+                "An item you can see while signed into a social account may not be available to a visitor who is signed out. A platform can restrict a page by location, age, membership, or a login requirement. A lookup service can also encounter a temporary failure. Treat public visibility as a condition to check rather than a promise that every tool will return the same result. smviewly works with available public content; it does not unlock private profiles or restricted groups. If a lookup returns nothing, record that outcome accurately instead of claiming the original source has no content."
             ],
             [
                 "Choose the tool that matches the source",
-                "SM Viewer organizes tools by platform and purpose. A Facebook page is different from an individual post, and a company profile is different from a job search. Start with the source you have, then choose the matching tool. Read the input guidance before pasting a link. Some tools accept a username or page name; others expect a specific address or identifier. Entering a profile address into a post tool can create an avoidable failure. Keep the original source address beside your notes so you can return to it if the result needs clarification or a different tool."
+                "smviewly organizes tools by platform and purpose. A Facebook page is different from an individual post, and a company profile is different from a job search. Start with the source you have, then choose the matching tool. Read the input guidance before pasting a link. Some tools accept a username or page name; others expect a specific address or identifier. Entering a profile address into a post tool can create an avoidable failure. Keep the original source address beside your notes so you can return to it if the result needs clarification or a different tool."
             ],
             [
                 "Use a small, repeatable research record",
@@ -24,7 +24,7 @@
             ],
             [
                 "Understand what privacy does and does not mean",
-                "Not connecting your social account reduces the chance that a lookup is mixed with actions performed through that account. It does not establish that your device is invisible to every service involved. Websites, network providers, and data services may process operational information. Do not claim absolute anonymity simply because a tool does not ask for a password. Read the service privacy policy and keep sensitive research out of inappropriate systems. In SM Viewer, public-content access is a practical workflow boundary. It is not a guarantee that no organization anywhere can associate any network activity with your device."
+                "Not connecting your social account reduces the chance that a lookup is mixed with actions performed through that account. It does not establish that your device is invisible to every service involved. Websites, network providers, and data services may process operational information. Do not claim absolute anonymity simply because a tool does not ask for a password. Read the service privacy policy and keep sensitive research out of inappropriate systems. In smviewly, public-content access is a practical workflow boundary. It is not a guarantee that no organization anywhere can associate any network activity with your device."
             ],
             [
                 "Respect platform-specific audience choices",
@@ -62,7 +62,7 @@
             ],
             [
                 "Use the dedicated tool for the content type",
-                "SM Viewer separates platform tools because a profile lookup and a media lookup answer different questions. Facebook Page Photos is more appropriate for available page images than a general company research workflow. X Media Viewer focuses on media available from a public profile. Read the tool's input guidance and verify that you are using a compatible name or URL. If the result contains a preview but no downloadable file, treat that as a limitation of the available response. Repeatedly changing tools does not establish permission to access a private item or recreate a missing original."
+                "smviewly separates platform tools because a profile lookup and a media lookup answer different questions. Facebook Page Photos is more appropriate for available page images than a general company research workflow. X Media Viewer focuses on media available from a public profile. Read the tool's input guidance and verify that you are using a compatible name or URL. If the result contains a preview but no downloadable file, treat that as a limitation of the available response. Repeatedly changing tools does not establish permission to access a private item or recreate a missing original."
             ],
             [
                 "Check the file you actually received",
@@ -108,7 +108,7 @@
             ],
             [
                 "The browser begins with a form submission",
-                "In SM Viewer, the form includes your input, the selected platform, the tool identifier, and a security code. The application validates those fields before starting a lookup. Platform and tool identifiers matter because they determine what kind of information the request asks for. A page-photo tool does not have the same purpose as a profile-information tool. Validation catches missing or unsuitable inputs early, but it does not establish that the source item is available. After validation, the application still needs a response from the data service before it can display a meaningful preview."
+                "In smviewly, the form includes your input, the selected platform, the tool identifier, and a security code. The application validates those fields before starting a lookup. Platform and tool identifiers matter because they determine what kind of information the request asks for. A page-photo tool does not have the same purpose as a profile-information tool. Validation catches missing or unsuitable inputs early, but it does not establish that the source item is available. After validation, the application still needs a response from the data service before it can display a meaningful preview."
             ],
             [
                 "The server maps your choice to a payload",
@@ -162,7 +162,7 @@
             ],
             [
                 "Use platform tools to locate the right material",
-                "SM Viewer provides different entry points for public Facebook pages, X profiles and media, Threads posts, and LinkedIn companies. Choose a tool based on the type of source you want to inspect. Read the input guidance before starting the lookup, then keep the original link beside your notes. Do not assume that every platform will return the same fields or an equally complete feed. The source may make some sections unavailable. Your review should describe the material you could inspect, not imply that a limited tool response represents the organization's entire activity."
+                "smviewly provides different entry points for public Facebook pages, X profiles and media, Threads posts, and LinkedIn companies. Choose a tool based on the type of source you want to inspect. Read the input guidance before starting the lookup, then keep the original link beside your notes. Do not assume that every platform will return the same fields or an equally complete feed. The source may make some sections unavailable. Your review should describe the material you could inspect, not imply that a limited tool response represents the organization's entire activity."
             ],
             [
                 "Create a simple review sheet",
@@ -262,7 +262,7 @@
             ],
             [
                 "Choose a tool suited to the reference",
-                "In SM Viewer, different platforms and content types use different tools. A Facebook page-photo lookup and an X media lookup do not ask the source for the same thing. Start with the platform that published the item, then select the tool matching the content you have. Read the input guidance carefully, especially when a tool expects a username rather than an individual post URL. If a result does not contain the material you expected, check the input and source before trying again. Do not treat repeated requests as a method of working around private content or access restrictions."
+                "In smviewly, different platforms and content types use different tools. A Facebook page-photo lookup and an X media lookup do not ask the source for the same thing. Start with the platform that published the item, then select the tool matching the content you have. Read the input guidance carefully, especially when a tool expects a username rather than an individual post URL. If a result does not contain the material you expected, check the input and source before trying again. Do not treat repeated requests as a method of working around private content or access restrictions."
             ],
             [
                 "Check the returned item before saving it",

@@ -58,8 +58,8 @@ class HomeController extends Controller
         }
 
         $title = $meta['name'].' '.$toolConfig['name'];
-        $description = trim(($toolConfig['desc'] ?? 'Browse public '.$meta['name'].' content privately.').' Free on SM Viewer (Social Media Viewer). No login required.');
-        $seoTitle = $title.' | SM Viewer';
+        $description = trim(($toolConfig['desc'] ?? 'Browse public '.$meta['name'].' content privately.').' Free on smviewly (Social Media Viewer). No login required.');
+        $seoTitle = $title.' | smviewly';
         $icon = $toolConfig['icon'] ?? 'ph-eye';
         $slug = $tool;
         $placeholder = PlatformCatalog::placeholder($platform, $tool);

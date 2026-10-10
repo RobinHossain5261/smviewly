@@ -7,9 +7,7 @@
 
     <title>Admin Dashboard - {{ $siteSettings->brand_name }}</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" href="{{ url('/favicon.ico') }}" sizes="48x48">
-    <link rel="icon" type="image/png" sizes="48x48" href="{{ url('/favicon-48x48.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('/apple-touch-icon.png') }}">
+    @include('partials.brand-icons')
 
     <link rel="stylesheet" href="{{ asset('fonts/icons/regular.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/icons/bold.css') }}">
@@ -40,10 +38,7 @@
                 <!-- Brand Title -->
                 <div class="h-16 flex items-center justify-between px-6 border-b border-slate-100 shrink-0">
                     <a href="{{ route('home') }}" class="flex items-center gap-2 font-extrabold text-slate-900 text-base">
-                        <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-primary text-white font-extrabold text-xs">
-                            {{ $siteSettings->brand_initial }}
-                        </div>
-                        <span>{{ $siteSettings->brand_name }} Admin</span>
+                        @include('partials.brand-logo')<span class="text-xs">Admin</span>
                     </a>
                     <button type="button" aria-label="Close navigation" onclick="toggleAdminSidebar()" class="lg:hidden text-slate-400 hover:text-slate-900 cursor-pointer">
                         <i class="ph ph-x text-xl"></i>
@@ -107,10 +102,7 @@
                     <span class="text-sm font-extrabold text-slate-950">Administration</span>
                 </div>
                 <a href="{{ route('home') }}" class="flex items-center gap-2 font-extrabold text-slate-900 text-sm">
-                    <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-tr from-brand-primary to-brand-secondary text-white font-extrabold text-xs">
-                        V
-                    </div>
-                    <span>{{ $siteSettings->brand_name }}</span>
+                    @include('partials.brand-logo')
                 </a>
             </header>
 

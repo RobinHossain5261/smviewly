@@ -20,7 +20,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-extrabold text-slate-500 uppercase tracking-wide mb-1.5">Brand Name</label>
-                        <input type="text" name="brand_name" required value="{{ old('brand_name', $settings['brand_name'] ?? 'SM Viewer') }}" class="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 px-4 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-brand-primary focus:outline-none">
+                        <input type="text" name="brand_name" required value="{{ old('brand_name', $settings['brand_name'] ?? 'smviewly') }}" class="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 px-4 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-brand-primary focus:outline-none">
                     </div>
 
                     <div>
@@ -55,7 +55,7 @@
                         <input type="file" name="logo" class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 cursor-pointer">
                         @if(!empty($settings['logo_path']))
                             <div class="mt-3 flex items-center gap-3 p-3 bg-slate-50 border border-slate-150 rounded-xl">
-                                <img src="{{ asset('storage/' . $settings['logo_path']) }}" alt="Brand Logo Thumbnail" class="h-6 w-auto">
+                                <img src="{{ $logoUrl }}" alt="Brand Logo Thumbnail" class="h-6 w-auto">
                                 <span class="text-[10px] text-slate-500 font-medium">Active logo image file</span>
                             </div>
                         @endif

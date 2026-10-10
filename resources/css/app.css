@@ -1,6 +1,23 @@
 @import 'tailwindcss';
 @import './admin.css';
 
+.sm-brand-image {
+    display: block;
+    width: 170px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.sm-footer .sm-brand-image { width: 185px; }
+.ad-shell .sm-brand-image { width: 145px; }
+@media (max-width: 640px) {
+    .sm-brand-image { width: 140px; }
+    .sm-drawer .sm-brand-image { width: 150px; }
+    .ad-shell .sm-brand-image { width: 125px; }
+}
+
 @font-face {
     font-family: 'Plus Jakarta Sans';
     font-style: normal;

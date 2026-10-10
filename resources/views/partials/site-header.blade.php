@@ -6,8 +6,7 @@
 <header class="sm-header" id="page-top">
     <div class="sm-container sm-nav">
         <a class="sm-brand" href="{{ route('home') }}" aria-label="{{ $siteSettings->brand_name }} home">
-            <span class="sm-logo"><i class="ph-bold ph-scan" aria-hidden="true"></i></span>
-            <span>{{ $siteSettings->brand_name }}</span><span class="sm-brand-dot">.</span>
+            @include('partials.brand-logo')
         </a>
         <nav class="sm-desktop-nav" aria-label="Main navigation">
             <a class="{{ request()->routeIs('home') ? 'is-current' : '' }}" href="{{ route('home') }}" {{ request()->routeIs('home') ? 'aria-current=page' : '' }}>Home</a>
@@ -40,7 +39,7 @@
     <dialog class="sm-drawer" id="sm-mobile-drawer" aria-label="Main navigation">
     <button type="button" class="sm-drawer-overlay" aria-label="Close navigation" tabindex="-1"></button>
     <nav id="sm-mobile-nav" aria-label="Mobile navigation">
-        <div class="sm-drawer-heading"><strong>{{ $siteSettings->brand_name }}</strong><button type="button" class="sm-drawer-close" aria-label="Close navigation"><i class="ph ph-x" aria-hidden="true"></i></button></div>
+        <div class="sm-drawer-heading"><a href="{{ route('home') }}" class="sm-brand" aria-label="{{ $siteSettings->brand_name }} home">@include('partials.brand-logo')</a><button type="button" class="sm-drawer-close" aria-label="Close navigation"><i class="ph ph-x" aria-hidden="true"></i></button></div>
         <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'is-current' : '' }}" {{ request()->routeIs('home') ? 'aria-current=page' : '' }}>Home</a>
         <div class="sm-mobile-tools"><button type="button" class="sm-mobile-tools-toggle" aria-expanded="false" aria-controls="sm-mobile-tool-links">Tools <i class="ph ph-caret-down" aria-hidden="true"></i></button><div class="sm-mobile-tools-collapse" id="sm-mobile-tool-links" inert><div>
             @foreach($platformOrder as $platformSlug)

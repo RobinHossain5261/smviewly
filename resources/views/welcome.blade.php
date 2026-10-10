@@ -157,7 +157,7 @@
     </section>
     </div>
 
-    <!-- Why Choose SM Viewer Highlights Section -->
+    <!-- Why Choose smviewly Highlights Section -->
     <div class="sm-section-band sm-band-why">
     <section class="sm-why sm-container" id="why-us" aria-labelledby="why-title">
         <div class="sm-section-heading">
@@ -273,7 +273,7 @@
                 <div>
                     <span class="sm-step-icon"><i class="ph-bold ph-scan" aria-hidden="true"></i></span>
                     <h3>See what's out there</h3>
-                    <p>Paste your link into SM Viewer, complete the quick security check, and safely preview available public content.</p>
+                    <p>Paste your link into smviewly, complete the quick security check, and safely preview available public content.</p>
                 </div>
             </article>
             <article class="sm-step-card">
@@ -291,7 +291,7 @@
     <!-- Principles Banner -->
     <div class="sm-section-band sm-band-usecases">
     <section class="sm-container sm-usecases" aria-labelledby="usecases-title">
-        <div class="sm-section-heading"><div><p class="sm-kicker">A few ways to use SM Viewer</p><h2 id="usecases-title">For the work behind your next idea.</h2><p class="sm-section-sub">A useful starting point for public content research, creative references, and company discovery.</p></div></div>
+        <div class="sm-section-heading"><div><p class="sm-kicker">A few ways to use smviewly</p><h2 id="usecases-title">For the work behind your next idea.</h2><p class="sm-section-sub">A useful starting point for public content research, creative references, and company discovery.</p></div></div>
         <div class="sm-usecase-grid">
             <a href="{{ route('viewer.tool', ['platform' => 'facebook', 'tool' => 'page-posts']) }}" class="sm-usecase-card"><span class="sm-usecase-number">01 / RESEARCH</span><i class="ph ph-binoculars" aria-hidden="true"></i><h3>See what brands are sharing.</h3><p>Explore public Facebook page posts to follow announcements, campaigns, and conversations.</p><span class="sm-usecase-link">Explore page posts <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
             <a href="{{ route('viewer.tool', ['platform' => 'twitter', 'tool' => 'media-viewer']) }}" class="sm-usecase-card"><span class="sm-usecase-number">02 / INSPIRATION</span><i class="ph ph-lightbulb" aria-hidden="true"></i><h3>Keep your references<br class="sm-reference-break"> together.</h3><p>Browse available public X media for creative references. Save only files you have permission to use.</p><span class="sm-usecase-link">Discover public media <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
@@ -361,7 +361,7 @@
         <div class="sm-faq-sidebar">
             <p class="sm-kicker">Common Questions</p>
             <h2 id="faq-title">A few things worth knowing.</h2>
-            <p class="sm-faq-sub">Find quick answers to common questions about using SM Viewer.</p>
+            <p class="sm-faq-sub">Find quick answers to common questions about using smviewly.</p>
             <a class="sm-text-link" href="{{ route('contact') }}">
                 <span>Still have questions? Contact support</span>
                 <i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i>
@@ -371,7 +371,7 @@
             @php
                 $questions = [
                     ['Do I need an account or social login to get started?', 'No account or social media credentials are ever needed. Simply choose a platform, paste any public link or username, complete the quick security check, and view available content.'],
-                    ['Can I view private profiles or restricted posts?', 'No. SM Viewer strictly respects platform privacy policies. We only fetch publicly accessible content. Private profiles, closed groups, and subscriber-only media cannot be viewed.'],
+                    ['Can I view private profiles or restricted posts?', 'No. smviewly strictly respects platform privacy policies. We only fetch publicly accessible content. Private profiles, closed groups, and subscriber-only media cannot be viewed.'],
                     ['Which social media platforms are currently supported?', 'We currently support Facebook, X (formerly Twitter), Threads, and LinkedIn. Available tools vary by platform: Facebook pages and posts, X profiles and media, Threads posts, and LinkedIn companies and profiles.'],
                     ['Can I download original quality videos and photos?', 'You can save photos and videos when the source provides a downloadable file. Resolution and format depend on the original upload and platform availability. Only download media you own or have permission to save.'],
                     ['Why might a specific link not return results?', 'The content may be set to private, geo-restricted, removed by the creator, or temporarily rate-limited by the platform server. Double-check your URL and try again.'],

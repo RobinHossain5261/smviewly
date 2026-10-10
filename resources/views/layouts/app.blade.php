@@ -12,9 +12,7 @@
     @php
         $ogTitle = html_entity_decode(trim($__env->yieldContent('title', $siteSettings->meta_title)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
         $ogDescription = html_entity_decode(trim($__env->yieldContent('description', $siteSettings->meta_description)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
-        $ogImage = !empty($siteSettings->logo_path)
-            ? asset('storage/'.$siteSettings->logo_path)
-            : url('/android-chrome-512x512.png');
+        $ogImage = $logoUrl;
         $brandExpand = $siteSettings->brand_expand ?? 'Social Media Viewer';
         $path = request()->getPathInfo();
         $canonicalDefault = rtrim(config('app.url'), '/').($path === '/' ? '' : $path);
@@ -33,8 +31,6 @@
             'logo' => [
                 '@type' => 'ImageObject',
                 'url' => $ogImage,
-                'width' => 512,
-                'height' => 512,
             ],
             'description' => $siteSettings->meta_description,
             'contactPoint' => [
@@ -53,23 +49,9 @@
             $organization['sameAs'] = $sameAs;
         }
 
-        $rawLogo = $siteSettings->logo_path ?? 'images/logo.png';
-        $logoUrl = (str_starts_with($rawLogo, 'images/') || str_starts_with($rawLogo, 'http') || str_starts_with($rawLogo, '/'))
-            ? asset($rawLogo)
-            : asset('storage/' . $rawLogo);
-
-        $rawFav = $siteSettings->favicon_path ?? 'images/favicon.ico';
-        $faviconUrl = (str_starts_with($rawFav, 'images/') || str_starts_with($rawFav, 'http') || str_starts_with($rawFav, '/'))
-            ? asset($rawFav)
-            : asset('storage/' . $rawFav);
     @endphp
     <link rel="canonical" href="@yield('canonical', $canonicalDefault)">
-    <link rel="icon" href="{{ $faviconUrl }}" sizes="any">
-    <link rel="icon" type="image/png" sizes="48x48" href="{{ $faviconUrl }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ $faviconUrl }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ $faviconUrl }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ $faviconUrl }}">
-    <link rel="manifest" href="{{ url('/site.webmanifest') }}">
+    @include('partials.brand-icons')
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -177,7 +159,7 @@
 
     <!-- Header Navbar -->
     @if(request()->routeIs('signin', 'signup'))
-        <header class="sm-account-header"><div class="sm-container"><a class="sm-brand" href="{{ route('home') }}"><span class="sm-logo"><i class="ph ph-scan" aria-hidden="true"></i></span><span>{{ $siteSettings->brand_name }}</span></a><a class="sm-account-back" href="{{ route('home') }}"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to site</a></div></header>
+        <header class="sm-account-header"><div class="sm-container"><a class="sm-brand" href="{{ route('home') }}">@include('partials.brand-logo')</a><a class="sm-account-back" href="{{ route('home') }}"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to site</a></div></header>
     @else
         @include('partials.site-header')
     @endif

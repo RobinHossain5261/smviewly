@@ -26,27 +26,33 @@ class AppServiceProvider extends ServiceProvider
     {
         Post::observe(PostObserver::class);
 
+        view()->composer('*', function ($view) {
+            $settings = $view->getData()['siteSettings'] ?? null;
+            $view->with('logoUrl', \App\Support\BrandAssets::url($settings->logo_path ?? null, 'images/logo.webp'));
+            $view->with('faviconUrl', asset('favicon.ico').'?v='.filemtime(public_path('favicon.ico')));
+        });
+
         try {
             if (Schema::hasTable('site_settings')) {
                 $settingsArray = SiteSetting::allSettings();
                 $settingsObj = (object) [
-                    'brand_name' => $settingsArray['brand_name'] ?? 'SM Viewer',
+                    'brand_name' => $settingsArray['brand_name'] ?? 'smviewly',
                     'primary_color' => $settingsArray['primary_color'] ?? '#2563eb',
                     'secondary_color' => $settingsArray['secondary_color'] ?? '#2563eb',
-                    'meta_title' => $settingsArray['meta_title'] ?? 'SM Viewer | Anonymous Social Media Viewer & Downloader',
-                    'meta_description' => $settingsArray['meta_description'] ?? 'SM Viewer (Social Media Viewer) lets you view and download public Facebook, X, Threads, and LinkedIn content anonymously. No login required.',
+                    'meta_title' => $settingsArray['meta_title'] ?? 'smviewly | Anonymous Social Media Viewer & Downloader',
+                    'meta_description' => $settingsArray['meta_description'] ?? 'smviewly (Social Media Viewer) lets you view and download public Facebook, X, Threads, and LinkedIn content anonymously. No login required.',
                     'contact_email' => $settingsArray['contact_email'] ?? 'support@smviewer.org',
                     'contact_phone' => $settingsArray['contact_phone'] ?? '',
                     'linkedin_url' => $settingsArray['linkedin_url'] ?? '',
                     'twitter_url' => $settingsArray['twitter_url'] ?? '',
                     'facebook_url' => $settingsArray['facebook_url'] ?? '',
-                    'logo_path' => $settingsArray['logo_path'] ?? 'images/logo.png',
+                    'logo_path' => $settingsArray['logo_path'] ?? 'images/logo.webp',
                     'favicon_path' => $settingsArray['favicon_path'] ?? 'images/favicon.ico',
                     'custom_head_scripts' => $settingsArray['custom_head_scripts'] ?? '',
                     'about_text' => $settingsArray['about_text'] ?? '',
                     'home_blog_title' => $settingsArray['home_blog_title'] ?? 'Latest Social Media Strategy Guides & Tips',
                     'home_blog_description' => $settingsArray['home_blog_description'] ?? '',
-                    'brand_initial' => strtoupper(mb_substr($settingsArray['brand_name'] ?? 'SM Viewer', 0, 1)),
+                    'brand_initial' => strtoupper(mb_substr($settingsArray['brand_name'] ?? 'smviewly', 0, 1)),
                     'brand_expand' => $settingsArray['brand_expand'] ?? 'Social Media Viewer',
                 ];
                 view()->share('siteSettings', $settingsObj);
@@ -66,17 +72,17 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->share('platforms', PlatformCatalog::all());
         view()->share('siteSettings', (object) [
-            'brand_name' => 'SM Viewer',
+            'brand_name' => 'smviewly',
             'primary_color' => '#2563eb',
             'secondary_color' => '#2563eb',
-            'meta_title' => 'SM Viewer | Anonymous Social Media Viewer & Downloader',
-            'meta_description' => 'SM Viewer (Social Media Viewer) lets you view and download public Facebook, X, Threads, and LinkedIn content anonymously. No login required.',
+            'meta_title' => 'smviewly | Anonymous Social Media Viewer & Downloader',
+            'meta_description' => 'smviewly (Social Media Viewer) lets you view and download public Facebook, X, Threads, and LinkedIn content anonymously. No login required.',
             'contact_email' => 'support@smviewer.org',
             'contact_phone' => '',
             'linkedin_url' => '',
             'twitter_url' => '',
             'facebook_url' => '',
-            'logo_path' => 'images/logo.png',
+            'logo_path' => 'images/logo.webp',
             'favicon_path' => 'images/favicon.ico',
             'custom_head_scripts' => '',
             'about_text' => '',

@@ -1,6 +1,6 @@
 ﻿@extends('layouts.app')
 @section('title', 'All Social Media Tools | '.$siteSettings->brand_name)
-@section('description', 'Browse all available Facebook, X, Threads and LinkedIn tools in the SM Viewer toolkit.')
+@section('description', 'Browse all available Facebook, X, Threads and LinkedIn tools in the smviewly toolkit.')
 @section('canonical', route('tools'))
 @section('content')
 <div class="sm-home"><header class="sm-hub-hero"><div class="sm-container"><p class="sm-kicker">The complete toolkit</p><h1>Choose your platform.<br><em>Find the right tool.</em></h1><p class="sm-hub-description">Browse available public-content tools by network. Each tool includes its own input guidance.</p></div></header>

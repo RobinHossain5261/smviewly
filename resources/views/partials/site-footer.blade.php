@@ -3,8 +3,7 @@
         <div class="sm-footer-top">
             <div class="sm-footer-brand-col">
                 <a class="sm-brand" href="{{ route('home') }}">
-                    <span class="sm-logo"><i class="ph-bold ph-scan" aria-hidden="true"></i></span>
-                    <span>{{ $siteSettings->brand_name }}</span><span class="sm-brand-dot">.</span>
+                    @include('partials.brand-logo')
                 </a>
                 <p>Explore public profiles, posts, and available media across four social platforms. No social account connection required.</p>
             </div>
@@ -30,7 +29,7 @@
         </div>
         <div class="sm-footer-bottom">
             <span>&copy; {{ date('Y') }} {{ $siteSettings->brand_name }}. All rights reserved.</span>
-            <p>SM Viewer is an independent research tool and is not affiliated with, sponsored by, or endorsed by Meta, Facebook, X, or LinkedIn.</p>
+            <p>smviewly is an independent research tool and is not affiliated with, sponsored by, or endorsed by Meta, Facebook, X, or LinkedIn.</p>
 
         </div>
     </div>
