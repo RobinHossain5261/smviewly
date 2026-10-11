@@ -13,7 +13,7 @@
 
     <button type="button"
             class="absolute inset-0 flex items-center justify-center cursor-pointer"
-            data-media-url="{{ $isVideo ? $file : $previewSrc }}"
+            data-media-url="{{ $file ?: $previewSrc }}"
             data-poster="{{ $poster }}"
             data-video="{{ $isVideo ? '1' : '0' }}"
             data-permalink="{{ $item['permalink'] ?? '' }}"
@@ -34,7 +34,7 @@
             <span class="text-[10px] text-white font-bold truncate">{{ !empty($item['likes']) ? number_format($item['likes']).' likes' : '' }}</span>
             <div class="flex items-center gap-1.5 pointer-events-auto">
                 <button type="button" onclick="openViewerMedia(this)"
-                        data-media-url="{{ $isVideo ? $file : $previewSrc }}"
+                        data-media-url="{{ $file ?: $previewSrc }}"
                         data-poster="{{ $poster }}"
                         data-video="{{ $isVideo ? '1' : '0' }}"
                         data-permalink="{{ $item['permalink'] ?? '' }}"

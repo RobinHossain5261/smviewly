@@ -68,7 +68,7 @@
     $hasDedicatedView = ! $isFacebook && in_array($view, ['feed', 'people', 'trends', 'jobs', 'events', 'courses', 'search', 'list', 'media'], true);
 @endphp
 
-<div data-result-root {{ $isFacebook ? 'data-fb-root' : '' }} class="mx-auto w-full max-w-5xl min-w-0 overflow-hidden rounded-3xl border border-slate-200 bg-white text-left {{ $isProfile ? 'p-0' : 'p-5 sm:p-8' }}">
+<div data-result-root {{ $isFacebook ? 'data-fb-root' : '' }} class="sm-result-card mx-auto w-full max-w-5xl min-w-0 overflow-hidden rounded-3xl border border-slate-200 bg-white text-left {{ $isProfile ? 'p-0' : 'p-5 sm:p-8' }}">
     @if($isAvatar && !empty($result['avatar']))
         <div class="flex flex-col items-center text-center max-w-md mx-auto">
             <span class="rounded-full bg-brand-primary/10 text-brand-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider mb-4">{{ $result['tool_name'] }}</span>
@@ -189,11 +189,10 @@
         {{-- Facebook-native profile: cover, overlapping avatar, blue actions, tabs, posts feed --}}
         <div class="relative">
             {{-- Cover photo: full-bleed like real Facebook --}}
-            <div class="relative h-40 sm:h-64 lg:h-72 overflow-hidden bg-[#1877F2]">
+            <div class="sm-result-cover relative overflow-hidden {{ empty($result['cover']) ? 'is-missing-cover' : '' }}">
                 @if(!empty($result['cover']))
-                    <img src="{{ $img($result['cover']) }}" alt="Cover photo" loading="lazy"
-                         class="absolute inset-0 h-full w-full object-cover object-top">
-                    <div class="absolute bottom-3 right-3 z-20 flex items-center gap-2">
+                    <img src="{{ $img($result['cover']) }}" alt="Profile cover photo" data-profile-cover class="sm-result-cover-image">
+                    <div data-cover-actions class="absolute bottom-3 right-3 z-20 flex items-center gap-2">
                         <button type="button" onclick="openViewerMedia(this)" data-media-url="{{ $result['cover'] }}" data-poster="{{ $result['cover'] }}" data-video="0"
                                 class="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-bold text-slate-800 shadow hover:bg-white transition-colors">
                             <i class="ph ph-eye text-sm"></i> View
@@ -228,9 +227,9 @@
                             </div>
                         @endif
                     </div>
-                    <div class="flex-1 min-w-0 text-center sm:text-left pb-1">
+                    <div class="sm-result-identity flex-1 min-w-0 text-center sm:text-left pb-1">
                         <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1.5">
-                            <h2 class="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight break-all">{{ $result['title'] ?: $result['handle'] }}</h2>
+                            <h2 class="sm-result-name text-xl sm:text-2xl font-bold text-slate-950 tracking-tight break-words">{{ $result['title'] ?: $result['handle'] }}</h2>
                             @if($result['verified'])
                                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#1877F2] text-white" title="Verified"><i class="ph-fill ph-check text-xs font-bold"></i></span>
                             @endif
@@ -245,14 +244,14 @@
                 </div>
 
                 @if($result['bio'])
-                    <p class="text-sm text-slate-700 whitespace-pre-line break-words mt-3 leading-relaxed">{{ $result['bio'] }}</p>
+                    <p class="sm-result-bio text-sm text-slate-700 whitespace-pre-line break-words mt-3 leading-relaxed">{{ $result['bio'] }}</p>
                 @endif
 
                 {{-- Actions --}}
                 <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-4 border-t border-slate-100 pt-4">
                     @if($profileUrl)
                         <a href="{{ $profileUrl }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-lg bg-[#1877F2] px-5 py-2 text-sm font-bold text-white hover:bg-[#166fe5] transition-colors">
-                            <i class="ph-fill ph-user-plus text-base"></i> Follow
+                            <i class="ph ph-arrow-square-out text-base" aria-hidden="true"></i> Open profile
                         </a>
                     @endif
                     <button type="button" onclick="shareLookupResult({{ json_encode($result['title'] ?: ($result['handle'] ?? 'smviewly')) }}, {{ json_encode($profileUrl ?: url()->current()) }})" class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-5 py-2 text-sm font-bold text-slate-800 hover:bg-slate-200 transition-colors">
@@ -269,7 +268,9 @@
                     $key = strtolower($stat['label'] ?? '');
                     if (isset($fbMap[$key])) { $fbStats[$fbMap[$key]] = $stat['value']; }
                 }
-                $fbStats['Posts'] = $fbStats['Posts'] ?? (int) ($result['counts']['posts'] ?? 0);
+                if (! isset($fbStats['Posts']) && count($result['posts'] ?? []) > 0) {
+                    $fbStats['Posts loaded'] = count($result['posts']);
+                }
             @endphp
             @if(count($fbStats))
                 <div class="mx-4 sm:mx-8 mb-2 rounded-xl bg-slate-50 border border-slate-100 px-4 py-3">
@@ -451,10 +452,10 @@
 
     @elseif($isProfile)
         {{-- Profile layout matching reference: cover, avatar, counts, actions, tabs, galleries --}}
-        <div class="relative h-36 sm:h-48 bg-brand-primary">
+        <div class="sm-result-cover relative overflow-hidden {{ empty($result['cover']) ? 'is-missing-cover' : '' }}">
             @if(!empty($result['cover']))
-                <img src="{{ $img($result['cover']) }}" alt="" class="absolute inset-0 h-full w-full object-cover">
-                <div class="absolute bottom-3 right-3 z-10 flex items-center gap-2">
+                <img src="{{ $img($result['cover']) }}" alt="Profile cover photo" data-profile-cover class="sm-result-cover-image">
+                <div data-cover-actions class="absolute bottom-3 right-3 z-10 flex items-center gap-2">
                     <button type="button" onclick="openViewerMedia(this)" data-media-url="{{ $result['cover'] }}" data-poster="{{ $result['cover'] }}" data-video="0"
                             class="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-bold text-slate-800 shadow hover:bg-white transition-colors">
                         <i class="ph ph-eye text-sm"></i> View
@@ -489,9 +490,9 @@
                     @endif
                     <span class="absolute bottom-1 right-1 h-4 w-4 rounded-full border-2 border-white {{ $result['private'] ? 'bg-amber-400' : 'bg-emerald-500' }}" title="{{ $result['private'] ? 'Private' : 'Public' }}"></span>
                 </div>
-                <div class="flex-1 min-w-0 pb-1">
+                <div class="sm-result-identity flex-1 min-w-0 pb-1">
                     <div class="flex flex-wrap items-center gap-2">
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{{ $result['title'] ?: '@'.$result['handle'] }}</h2>
+                        <h2 class="sm-result-name text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{{ $result['title'] ?: '@'.$result['handle'] }}</h2>
                         @if($result['verified'])
                             <span class="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-white" title="Verified"><i class="ph ph-check text-xs font-bold"></i></span>
                         @endif
@@ -519,7 +520,7 @@
                 <p class="text-xs font-bold text-amber-600 mb-3">This account is marked private — public data may be limited.</p>
             @endif
             @if($result['bio'])
-                <p class="text-sm text-slate-600 font-medium whitespace-pre-line break-words mb-3">{{ $result['bio'] }}</p>
+                <p class="sm-result-bio text-sm text-slate-600 font-medium whitespace-pre-line break-words mb-3">{{ $result['bio'] }}</p>
             @endif
             @if($result['caption'] && $focus === 'media')
                 <p class="text-sm text-slate-600 font-medium whitespace-pre-line break-words mb-3">{{ $result['caption'] }}</p>
@@ -537,7 +538,7 @@
             <div class="flex flex-wrap items-center gap-2 mb-5">
                 @if($profileUrl)
                     <a href="{{ $profileUrl }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-xl bg-brand-primary px-4 py-2.5 text-xs font-extrabold text-white hover:opacity-95">
-                        <i class="ph ph-user-plus text-sm"></i> Follow
+                        <i class="ph ph-arrow-square-out text-sm" aria-hidden="true"></i> Open profile
                     </a>
                 @endif
                 <button type="button" onclick="shareLookupResult({{ json_encode($result['title'] ?: ($result['handle'] ?? 'smviewly')) }}, {{ json_encode($profileUrl ?: url()->current()) }})" class="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 border border-slate-200 px-4 py-2.5 text-xs font-extrabold text-slate-700 hover:bg-slate-200">

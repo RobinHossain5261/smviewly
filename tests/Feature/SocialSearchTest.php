@@ -69,6 +69,46 @@ class SocialSearchTest extends TestCase
         $this->assertStringContainsString('Example Page', $response->json('html'));
     }
 
+    public function test_nested_cover_image_is_used_instead_of_provider_metadata(): void
+    {
+        $this->configureProvider();
+        $cover = 'https://scontent.fbcdn.net/cover.jpg?a=1&b=2';
+        Http::fake(['*' => Http::response(['success' => true, 'profile' => [
+            'name' => 'Example Profile', 'username' => 'example',
+            'cover_photo' => ['id' => 'photo-123', 'photo' => ['image' => ['uri' => str_replace('&', '&amp;', $cover)]]],
+        ]])]);
+        $html = $this->postJson('/search', $this->searchInput())->assertOk()->json('html');
+        $this->assertStringContainsString('data-profile-cover', $html);
+        $this->assertStringContainsString(e(route('viewer.media', ['url' => $cover])), $html);
+        $this->assertStringNotContainsString('url=photo-123', $html);
+        $this->assertStringContainsString('Open profile', $html);
+    }
+
+    public function test_missing_cover_uses_a_compact_fallback_without_cover_download_controls(): void
+    {
+        $this->configureProvider();
+        Http::fake(['*' => Http::response(['success' => true, 'profile' => ['name' => 'No cover', 'username' => 'example']])]);
+        $html = $this->postJson('/search', $this->searchInput())->assertOk()->json('html');
+        $this->assertStringContainsString('is-missing-cover', $html);
+        $this->assertStringNotContainsString('data-cover-actions', $html);
+    }
+
+    public function test_photo_viewer_opens_the_original_image_instead_of_the_thumbnail(): void
+    {
+        $original = 'https://scontent.fbcdn.net/full-photo.jpg';
+        $thumbnail = 'https://scontent.fbcdn.net/small-preview.jpg';
+        foreach (['partials.ig-tile', 'partials.media-tile'] as $partial) {
+            $html = view($partial, [
+                'item' => ['url' => $original, 'thumb' => $thumbnail, 'is_video' => false],
+                'img' => fn ($url) => $url,
+                'dl' => fn ($url) => $url,
+            ])->render();
+            $this->assertStringContainsString('src="'.$thumbnail.'"', $html);
+            $this->assertStringContainsString('data-media-url="'.$original.'"', $html);
+            $this->assertStringNotContainsString('data-media-url="'.$thumbnail.'"', $html);
+        }
+    }
+
     public function test_parallel_sections_keep_names_and_skip_failed_connections(): void
     {
         $this->configureProvider();

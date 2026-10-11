@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\Post;
 use App\Services\SocialLookupService;
 use App\Support\PlatformCatalog;
+use App\Support\ToolPageContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rule;
@@ -58,15 +59,26 @@ class HomeController extends Controller
         }
 
         $title = $meta['name'].' '.$toolConfig['name'];
-        $description = trim(($toolConfig['desc'] ?? 'Browse public '.$meta['name'].' content privately.').' Free on smviewly (Social Media Viewer). No login required.');
-        $seoTitle = $title.' | smviewly';
+        $brand = view()->shared('siteSettings')->brand_name ?? 'smviewly';
+        $description = match ($platform.'/'.$tool) {
+            'facebook/page-viewer' => 'View public Facebook page details. Enter a page name or URL to explore available information without connecting your social account.',
+            'facebook/profile-viewer' => 'Look up available public Facebook profile details. Enter a name or profile URL to explore public information without a social login.',
+            'twitter/profile-viewer' => 'Look up public X (Twitter) profile details. Enter a username or profile URL to view available account information without a social login.',
+            'twitter/tweets-viewer' => 'View available tweets from a public X (Twitter) account. Enter a username or profile URL to explore recent posts without a social login.',
+            'threads/profile-viewer' => 'Explore available public Threads profile details and posts. Enter a username or profile link without connecting your social account.',
+            'linkedin/company-viewer' => 'Look up public LinkedIn company information. Enter a company name or URL to explore available about details without a social login.',
+            default => $title.': '.$toolConfig['desc'].' Public content only; no social account connection needed.',
+        };
+        $seoTitle = $title.' | '.$brand;
+        $keywords = strtolower($title).', public '.strtolower($title).', '.strtolower($meta['name']).' tools';
         $icon = $toolConfig['icon'] ?? 'ph-eye';
         $slug = $tool;
         $placeholder = PlatformCatalog::placeholder($platform, $tool);
+        $pageContent = ToolPageContent::forTool($platform, $meta, $toolConfig);
         $similar = PlatformCatalog::similar($platform, $tool);
 
         return view('tool_detail', compact(
-            'platform', 'slug', 'title', 'description', 'seoTitle', 'icon', 'similar', 'faqs', 'meta', 'toolConfig', 'placeholder'
+            'platform', 'slug', 'title', 'description', 'seoTitle', 'keywords', 'icon', 'similar', 'faqs', 'meta', 'toolConfig', 'placeholder', 'pageContent'
         ));
     }
 

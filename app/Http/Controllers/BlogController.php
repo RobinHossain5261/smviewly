@@ -14,6 +14,7 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $query = Post::published()->with('category')->latest();
+        $canonicalParameters = [];
 
         // Optional category filter
         if ($request->has('category')) {
@@ -21,14 +22,19 @@ class BlogController extends Controller
             $category = Category::where('slug', $categorySlug)->first();
             if ($category) {
                 $query->where('category_id', $category->id);
+                $canonicalParameters['category'] = $category->slug;
             }
         }
 
         $featuredPost = (clone $query)->first();
         $posts = $query->paginate(6)->withQueryString();
+        if ($posts->currentPage() > 1) {
+            $canonicalParameters['page'] = $posts->currentPage();
+        }
+        $canonicalUrl = route('blog.index', $canonicalParameters);
         $categories = Category::withCount(['posts' => fn ($query) => $query->published()])->get();
 
-        return view('blog.index', compact('posts', 'categories', 'featuredPost'));
+        return view('blog.index', compact('posts', 'categories', 'featuredPost', 'canonicalUrl'));
     }
 
     /**

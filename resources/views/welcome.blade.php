@@ -1,6 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Social Media Viewer & Downloader | '.$siteSettings->brand_name)
-@section('description', 'Explore public Facebook pages, X media, Threads posts and LinkedIn company profiles. Preview available content and save media you have permission to download.')
+@section('title', 'Social Media Viewer for Facebook, X & Threads | '.$siteSettings->brand_name)
+@section('description', 'Explore public Facebook pages, X profiles, Threads posts and LinkedIn company details with '.$siteSettings->brand_name.'. Enter a username or link to view available content.')
+@section('keywords', 'social media viewer, facebook page viewer, twitter profile viewer, threads profile viewer, linkedin company lookup')
 @push('styles')
 
 @endpush
@@ -135,7 +136,7 @@
                 <span><i class="ph-bold ph-shield-check" aria-hidden="true"></i> Public Content Only</span>
                 <span><i class="ph-bold ph-devices" aria-hidden="true"></i> Works on All Devices</span>
             </div>
-            <div id="live-results" class="hidden sm-results" aria-live="polite"></div>
+            <div id="live-results" class="hidden sm-results mt-3 md:mt-5" aria-live="polite"></div>
         </div>
     </section>
 

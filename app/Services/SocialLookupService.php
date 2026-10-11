@@ -282,13 +282,18 @@ class SocialLookupService
                 $profile['cover'] ?? null,
                 $profile['cover_url'] ?? null,
                 $profile['cover_photo'] ?? null,
+                $profile['cover_photo_url'] ?? null,
                 $profile['cover_picture'] ?? null,
                 $profile['banner'] ?? null,
                 $profile['profile_banner'] ?? null,
+                $profile['profile_banner_url'] ?? null,
+                $profile['banner_url'] ?? null,
                 $company['cover'] ?? null,
                 $company['cover_url'] ?? null,
                 $company['cover_picture'] ?? null,
                 $company['banner'] ?? null,
+                $company['background_image'] ?? null,
+                $raw['cover'] ?? null,
             ]),
         ];
 
@@ -1436,39 +1441,19 @@ class SocialLookupService
     {
         foreach ($candidates as $value) {
             if (is_string($value) && trim($value) !== '') {
-                return $this->cleanText(trim($value));
+                $url = $this->cleanText(trim($value));
+                if (preg_match('~^https?://~i', $url) && parse_url($url, PHP_URL_HOST)) {
+                    return $url;
+                }
             }
             if (is_array($value)) {
-                foreach ([
-                    'source' => $value['source'] ?? null,
-                    'url' => $value['url'] ?? null,
-                    'uri' => $value['uri'] ?? null,
-                    'link' => $value['link'] ?? null,
-                    'src' => $value['src'] ?? null,
-                ] as $key => $nested) {
-                    if (is_string($nested) && trim($nested) !== '') {
-                        return $this->cleanText(trim($nested));
-                    }
-                    if (is_array($nested)) {
-                        foreach ($nested as $deeper) {
-                            if (is_string($deeper) && trim($deeper) !== '') {
-                                return $this->cleanText(trim($deeper));
-                            }
-                        }
-                    }
-                    unset($key);
-                }
-                foreach ($value as $nested) {
-                    if (is_string($nested) && trim($nested) !== '') {
-                        return $this->cleanText(trim($nested));
-                    }
-                    if (is_array($nested)) {
-                        foreach ($nested as $deeper) {
-                            if (is_string($deeper) && trim($deeper) !== '') {
-                                return $this->cleanText(trim($deeper));
-                            }
-                        }
-                    }
+                $url = $this->firstMediaString([
+                    $value['source'] ?? null, $value['url'] ?? null,
+                    $value['uri'] ?? null, $value['link'] ?? null,
+                    $value['src'] ?? null, ...array_values($value),
+                ]);
+                if ($url !== '') {
+                    return $url;
                 }
             }
         }

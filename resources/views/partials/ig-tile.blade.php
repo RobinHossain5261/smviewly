@@ -8,7 +8,7 @@
 @endphp
 <div class="relative group aspect-square overflow-hidden bg-slate-100 cursor-pointer"
      onclick="openViewerMedia(this)"
-     data-media-url="{{ $isVideo ? $file : ($thumb ?: $file) }}"
+     data-media-url="{{ $file ?: $thumb }}"
      data-poster="{{ $thumb }}"
      data-video="{{ $isVideo ? '1' : '0' }}"
      data-permalink="{{ $item['permalink'] ?? '' }}">
@@ -39,7 +39,7 @@
             <div class="flex items-center gap-2">
                 @if($file)
                     <button type="button" onclick="openViewerMedia(this)"
-                            data-media-url="{{ $isVideo ? $file : ($thumb ?: $file) }}"
+                            data-media-url="{{ $file ?: $thumb }}"
                             data-poster="{{ $thumb }}"
                             data-video="{{ $isVideo ? '1' : '0' }}"
                             data-permalink="{{ $item['permalink'] ?? '' }}"
@@ -54,7 +54,7 @@
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
             @if($file)
                 <button type="button" onclick="openViewerMedia(this)"
-                        data-media-url="{{ $isVideo ? $file : ($thumb ?: $file) }}"
+                        data-media-url="{{ $file ?: $thumb }}"
                         data-poster="{{ $thumb }}"
                         data-video="{{ $isVideo ? '1' : '0' }}"
                         data-permalink="{{ $item['permalink'] ?? '' }}"

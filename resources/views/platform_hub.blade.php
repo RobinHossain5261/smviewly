@@ -1,6 +1,7 @@
 ﻿@extends('layouts.app')
 @section('title', $meta['name'].' Tools — Public Profiles & Media | '.$siteSettings->brand_name)
 @section('description', 'Explore '.$meta['name'].' tools for '.$meta['short'].'. Browse available public content without connecting your social account.')
+@section('keywords', strtolower($meta['name']).' viewer, '.strtolower($meta['name']).' tools, public '.strtolower($meta['name']).' lookup')
 @section('canonical', route('viewer.tool', ['platform' => $platform]))
 @section('content')
 <div class="sm-home sm-platform-page">

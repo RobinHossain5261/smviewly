@@ -1,6 +1,23 @@
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
+// Capture errors from images inserted by a live search as well as initial HTML.
+document.addEventListener('error', (event) => {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement) || !image.matches('[data-profile-cover]')) return;
+    const cover = image.closest('.sm-result-cover');
+    image.hidden = true;
+    cover?.classList.add('is-missing-cover');
+    cover?.querySelector('[data-cover-actions]')?.setAttribute('hidden', '');
+    if (cover && !cover.querySelector('[data-cover-fallback]')) {
+        const fallback = document.createElement('span');
+        fallback.dataset.coverFallback = '';
+        fallback.className = 'absolute inset-0 flex items-center justify-center text-xs text-slate-500';
+        fallback.textContent = 'Cover photo unavailable';
+        cover.append(fallback);
+    }
+}, true);
+
 // Contact confirmation is shown after the server has saved the message.
 const confirmation = document.querySelector('[data-toast-message]');
 if (confirmation?.dataset.toastMessage) {

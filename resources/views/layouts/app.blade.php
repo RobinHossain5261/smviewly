@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', $siteSettings->meta_title)</title>
     <meta name="robots" content="@yield('robots', 'index, follow, max-image-preview:large')">
-    <meta name="description" content="@yield('description', $siteSettings->meta_description)">
-    <meta name="keywords" content="@yield('keywords', 'facebook profile viewer, facebook video downloader, x twitter profile viewer, tweet viewer, twitter media downloader, threads profile viewer, linkedin profile lookup, incognito social media downloader, free social media viewer')">
     @php
         $ogTitle = html_entity_decode(trim($__env->yieldContent('title', $siteSettings->meta_title)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $pageKeywords = trim($__env->yieldContent('keywords', strtolower($ogTitle)));
         $ogDescription = html_entity_decode(trim($__env->yieldContent('description', $siteSettings->meta_description)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
         $ogImage = $logoUrl;
         $brandExpand = $siteSettings->brand_expand ?? 'Social Media Viewer';
@@ -50,23 +48,26 @@
         }
 
     @endphp
+    <title>{{ $ogTitle }}</title>
+    <meta name="description" content="{{ $ogDescription }}">
+    <meta name="keywords" content="{{ $pageKeywords }}">
     <link rel="canonical" href="@yield('canonical', $canonicalDefault)">
     @include('partials.brand-icons')
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:site_name" content="{{ $siteSettings->brand_name }}">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="@yield('canonical', $canonicalDefault)">
     <meta property="og:title" content="{{ $ogTitle }}">
     <meta property="og:description" content="{{ $ogDescription }}">
-    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:image" content="@yield('og_image', $ogImage)">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $ogTitle }}">
     <meta name="twitter:description" content="{{ $ogDescription }}">
-    <meta name="twitter:image" content="{{ $ogImage }}">
+    <meta name="twitter:image" content="@yield('og_image', $ogImage)">
 
     <script type="application/ld+json">
     {!! json_encode([
@@ -97,7 +98,7 @@
                 ],
             ],
         ],
-    ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
+    ], JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
     </script>
     @stack('ld-json')
 
@@ -195,8 +196,8 @@
         }
     </script>
     <!-- Media lightbox (photo / video posts) -->
-    <div id="viewer-media-modal" class="hidden fixed inset-0 z-[80] bg-black/80 flex items-center justify-center p-4" onclick="closeViewerMedia()">
-        <div class="max-w-4xl w-full flex flex-col items-center gap-4" onclick="event.stopPropagation()">
+    <div id="viewer-media-modal" role="dialog" aria-modal="true" aria-label="Photo and video viewer" tabindex="-1" class="hidden fixed inset-0 z-[80] bg-black/80 flex items-center justify-center p-4" onclick="closeViewerMedia()">
+        <div class="viewer-media-frame max-w-4xl w-full flex flex-col items-center gap-4" onclick="event.stopPropagation()">
             <div id="viewer-media-image-wrap" class="relative hidden">
                 <img id="viewer-media-image" alt="" class="max-h-[80vh] w-auto max-w-full rounded-xl object-contain">
                 <button type="button" class="absolute -top-3 -right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg hover:bg-slate-100" onclick="closeViewerMedia(); event.stopPropagation();" aria-label="Close">
@@ -219,6 +220,8 @@
     </div>
 
     <script>
+        let viewerPreviousFocus = null;
+        let viewerPreviousOverflow = '';
         window.openViewerMedia = function (el) {
             const modal = document.getElementById('viewer-media-modal');
             const video = document.getElementById('viewer-media-video');
@@ -240,6 +243,7 @@
             if (fallbackWrap) fallbackWrap.classList.add('hidden');
             video.pause();
             video.removeAttribute('src');
+            video.removeAttribute('poster');
             video.load();
 
             if (isVideo && url) {
@@ -256,6 +260,12 @@
                 };
                 video.play().catch(() => {});
             } else if (!isVideo && (url || poster)) {
+                image.onerror = () => {
+                    imageWrap.classList.add('hidden');
+                    fallback.href = permalink || url || poster;
+                    fallback.textContent = 'Open image on source';
+                    fallbackWrap.classList.remove('hidden');
+                };
                 image.src = proxied(url || poster);
                 if (imageWrap) imageWrap.classList.remove('hidden');
             } else if (permalink) {
@@ -265,7 +275,13 @@
                 return;
             }
 
+            if (modal.classList.contains('hidden')) {
+                viewerPreviousFocus = document.activeElement;
+                viewerPreviousOverflow = document.body.style.overflow;
+            }
             modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            modal.focus({ preventScroll: true });
         };
 
         window.closeViewerMedia = function () {
@@ -276,7 +292,11 @@
                 video.removeAttribute('src');
                 video.load();
             }
-            if (modal) modal.classList.add('hidden');
+            if (modal && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = viewerPreviousOverflow;
+                viewerPreviousFocus?.focus({ preventScroll: true });
+            }
         };
 
         document.addEventListener('keydown', (e) => {

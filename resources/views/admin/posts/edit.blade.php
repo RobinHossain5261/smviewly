@@ -18,7 +18,7 @@
             <!-- Title -->
             <div>
                 <label class="block text-xs font-extrabold text-slate-500 uppercase tracking-wide mb-1.5">Article Title</label>
-                <input type="text" name="title" required value="{{ old('title', $post->title) }}" placeholder="e.g. How to View Stories Anonymously" class="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 px-4 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-brand-primary focus:outline-none">
+                <input type="text" name="title" required value="{{ old('title', $post->title) }}" placeholder="e.g. How to Explore Public Facebook Pages" class="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 px-4 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-brand-primary focus:outline-none">
             </div>
 
             <!-- Categories / Status grid -->

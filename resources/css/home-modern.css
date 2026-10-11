@@ -1,4 +1,27 @@
 /* Homepage presentation, kept separate from shared tool and result styles. */
+.sm-result-card { scroll-margin-top:90px; overflow-wrap:anywhere; }
+.sm-result-card [hidden] { display:none!important; }
+.sm-result-cover { height:clamp(180px,24vw,280px); background:#e8eef1; }
+.sm-result-cover-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center 60%; }
+.sm-result-cover.is-missing-cover { aspect-ratio:auto; height:120px; background:linear-gradient(135deg,#e8eef1,#d9e5e1); }
+.sm-result-identity { position:relative; z-index:1; }
+.sm-result-name { line-height:1.25; overflow-wrap:anywhere; }
+.sm-result-bio { max-width:100%; line-height:1.65; }
+.sm-result-card .result-tab { border-bottom-width:2px; border-bottom-style:solid; }
+.sm-result-card [data-cover-actions] { top:12px; bottom:auto; }
+@media (max-width:640px) {
+    .sm-result-cover { height:clamp(150px,42vw,210px); }
+    .sm-result-card [data-cover-actions] { top:10px; right:10px; gap:6px; }
+    .sm-result-card [data-cover-actions] a, .sm-result-card [data-cover-actions] button { padding:6px 8px; font-size:11px; }
+}
+#viewer-media-modal { padding:clamp(12px,3vw,32px); }
+#viewer-media-modal .viewer-media-frame { width:min(1200px,100%); max-width:none; }
+#viewer-media-image-wrap, #viewer-media-video-wrap { width:100%; height:min(88dvh,900px); }
+#viewer-media-image, #viewer-media-video { display:block; width:100%; height:100%; max-width:100%; max-height:100%; object-fit:contain; }
+#viewer-media-modal button[aria-label="Close"] { top:8px; right:8px; z-index:1; }
+@media(max-width:640px) {
+    #viewer-media-image-wrap, #viewer-media-video-wrap { height:calc(100dvh - 48px); }
+}
 .sm-home {
     --sm-ink: #102823;
     --sm-body: #415650;
@@ -499,6 +522,7 @@ body.sm-drawer-lock { overflow:hidden; }
 .sm-tool-guidance { display:flex; align-items:center; gap:12px; padding:20px; border:1px solid #d0dfd3; border-radius:15px; background:#f3f7f1; }
 .sm-tool-guidance strong { display:block; font-size:13px; color:#254a35; }
 .sm-tool-guidance p { font-size:12px; margin-top:5px; overflow-wrap:anywhere; }
+.sm-tool-page .sm-step-card p, .sm-tool-page .sm-faq-body p { overflow-wrap:anywhere; }
 .sm-tool-page .sm-search-panel { max-width:none; border-radius:20px; }
 .sm-tool-page .sm-reassurance { margin-top:20px; font-size:12px; }
 .sm-tool-page .sm-button { background:var(--sm-brand-primary); color:#fff; border-radius:10px; }

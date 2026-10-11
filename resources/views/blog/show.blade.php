@@ -1,7 +1,9 @@
 ﻿@extends('layouts.app')
 @section('title', $post->title.' | '.$siteSettings->brand_name)
-@section('description', \Illuminate\Support\Str::limit(strip_tags($post->content), 155))
+@section('description', $post->seo_description)
 @section('canonical', route('blog.show', $post->slug))
+@section('og_type', 'article')
+@section('og_image', $post->image_url)
 @section('content')
 <div class="sm-home sm-article-page">
     <header class="sm-hub-hero"><div class="sm-container">
@@ -23,6 +25,6 @@
 @endsection
 @push('ld-json')
 <script type="application/ld+json">
-{!! json_encode(['@context' => 'https://schema.org', '@type' => 'Article', 'headline' => $post->title, 'datePublished' => $post->created_at?->toAtomString(), 'dateModified' => $post->updated_at?->toAtomString(), 'image' => $post->image_url, 'author' => ['@type' => 'Organization', 'name' => $siteSettings->brand_name], 'publisher' => ['@type' => 'Organization', 'name' => $siteSettings->brand_name], 'mainEntityOfPage' => route('blog.show', $post->slug), 'description' => \Illuminate\Support\Str::limit(strip_tags($post->content), 155)], JSON_HEX_TAG|JSON_UNESCAPED_SLASHES) !!}
+{!! json_encode(['@context' => 'https://schema.org', '@type' => 'Article', 'headline' => $post->title, 'datePublished' => $post->created_at?->toAtomString(), 'dateModified' => $post->updated_at?->toAtomString(), 'image' => $post->image_url, 'author' => ['@type' => 'Organization', 'name' => $siteSettings->brand_name], 'publisher' => ['@type' => 'Organization', 'name' => $siteSettings->brand_name], 'mainEntityOfPage' => route('blog.show', $post->slug), 'description' => $post->seo_description], JSON_HEX_TAG|JSON_UNESCAPED_SLASHES) !!}
 </script>
 @endpush

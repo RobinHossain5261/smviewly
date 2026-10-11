@@ -105,10 +105,12 @@
     function switchResultTab(btn, tab) {
         const root = btn.closest('[data-result-root]') || btn.closest('.rounded-3xl') || document;
         root.querySelectorAll('.result-tab').forEach((el) => {
-            el.classList.remove('border-slate-950', 'text-slate-950', 'border-brand-primary', 'text-brand-primary');
+            el.classList.remove('border-slate-950', 'text-slate-950', 'border-brand-primary', 'text-brand-primary', 'border-[#1877F2]', 'text-[#1877F2]');
             el.classList.add('border-transparent', 'text-slate-400');
+            el.setAttribute('aria-selected', 'false');
         });
-        btn.classList.remove('border-transparent', 'text-slate-400');
+        btn.classList.remove('border-transparent', 'text-slate-400', 'text-slate-500');
+        btn.setAttribute('aria-selected', 'true');
         const isFbRoot = !!btn.closest('[data-fb-root]');
         if (isFbRoot) btn.classList.add('border-[#1877F2]', 'text-[#1877F2]');
         else btn.classList.add('border-brand-primary', 'text-slate-950');

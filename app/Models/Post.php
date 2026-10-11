@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    public function getSeoDescriptionAttribute(): string
+    {
+        $text = html_entity_decode(preg_replace('/<[^>]+>/', ' ', $this->content ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $text = trim(preg_replace('/\s+/u', ' ', $text));
+
+        return \Illuminate\Support\Str::limit($text ?: $this->title, 155);
+    }
+
     protected $fillable = [
         'title',
         'slug',

@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('robots', 'noindex, follow')
 
 @section('title', $result['title'] . ' · ' . ucfirst($result['platform']) . ' ' . $result['tool_name'])
-@section('description', 'Anonymous ' . $result['tool_name'] . ' result for ' . $result['handle'])
+@section('description', 'Public ' . $result['tool_name'] . ' result for ' . $result['handle'])
 
 @section('content')
 <div class="py-12 px-4 sm:px-6 lg:px-8 bg-[#fafafa]">

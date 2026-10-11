@@ -1,23 +1,19 @@
 ﻿@extends('layouts.app')
 @section('title', $seoTitle)
 @section('description', $description)
+@section('keywords', $keywords)
 @section('canonical', route('viewer.tool', ['platform' => $platform, 'tool' => $slug]))
 @php
     $intent = $toolConfig['intent'] ?? 'view';
     $cta = $toolConfig['cta'] ?? 'View';
-    $toolQuestions = [
-        ['How do I use '.$title.'?', 'Enter the input described on this page: '.$placeholder.'. Complete the security code and submit. The tool will request available public content from '.$meta['name'].'.'],
-        ['Do I need to connect my '.$meta['name'].' account?', 'No. This tool does not ask for your social account password or connect to your personal social session. Only publicly available content can be returned.'],
-        ['Why might my lookup return no results?', 'The source may require a login, restrict access, remove content, or temporarily limit requests. Check your link and use the tool that matches the content you want to view.'],
-        ['Can I download the returned media?', 'When a downloadable file is available, you can save it from the results. Quality and format depend on the source. Only save media you own or have permission to download.'],
-    ];
+    $toolQuestions = $pageContent['questions'];
 @endphp
 @section('content')
 <div class="sm-home sm-tool-page">
     <section class="sm-hub-hero">
         <div class="sm-container">
             <nav class="sm-hub-breadcrumb" aria-label="Breadcrumb"><a href="{{ route('home') }}">Home</a><i class="ph ph-caret-right" aria-hidden="true"></i><a href="{{ route('viewer.tool', ['platform' => $platform]) }}">{{ $meta['name'] }} tools</a><i class="ph ph-caret-right" aria-hidden="true"></i><span>{{ $toolConfig['name'] }}</span></nav>
-            <div class="sm-tool-intro"><div><p class="sm-kicker">{{ $meta['name'] }} / {{ $intent === 'download' ? 'Media downloader' : ($intent === 'search' ? 'Public search' : 'Public content viewer') }}</p><h1>{{ $title }}</h1><p class="sm-hub-description">{{ $toolConfig['desc'] }}</p></div><div class="sm-tool-guidance"><span class="sm-platform-icon"><i class="ph {{ $icon }}" aria-hidden="true"></i></span><div><strong>What to enter</strong><p>{{ $placeholder }}</p></div></div></div>
+            <div class="sm-tool-intro"><div><p class="sm-kicker">{{ $meta['name'] }} / {{ $intent === 'download' ? 'Media downloader' : ($intent === 'search' ? 'Public search' : 'Public content viewer') }}</p><h1>{{ $title }}</h1><p class="sm-hub-description">{{ $pageContent['intro'] }}</p></div><div class="sm-tool-guidance"><span class="sm-platform-icon"><i class="ph {{ $icon }}" aria-hidden="true"></i></span><div><strong>What to enter</strong><p>{{ $pageContent['input'] }}</p></div></div></div>
             <div class="sm-search-panel" id="main-search-container">
                 <form id="hero-search-form" action="{{ route('viewer.search') }}" method="POST">
                     @csrf
@@ -35,7 +31,7 @@
             <div id="live-results" class="hidden sm-results" aria-live="polite"></div>
         </div>
     </section>
-    <div class="sm-section-band sm-band-how"><section class="sm-container sm-how" aria-labelledby="tool-how-title"><div class="sm-how-intro"><p class="sm-kicker">Simple & Transparent</p><h2 id="tool-how-title">Using {{ $toolConfig['name'] }}.</h2><p>Start with the right input. Review only what {{ $meta['name'] }} makes publicly available.</p></div><div class="sm-steps"><article class="sm-step-card"><span class="sm-step-number">STEP 01</span><span class="sm-step-icon"><i class="ph ph-link" aria-hidden="true"></i></span><h3>Enter your input</h3><p>{{ $intent === 'search' ? 'Type a search query using the guidance above, then check that it matches what you want to find.' : 'Paste a public '.$meta['name'].' link or enter a supported name, following the input guidance above.' }}</p></article><article class="sm-step-card"><span class="sm-step-number">STEP 02</span><span class="sm-step-icon"><i class="ph ph-shield-check" aria-hidden="true"></i></span><h3>Verify and submit</h3><p>Enter the security code shown beside the field, then submit your input to start the lookup.</p></article><article class="sm-step-card"><span class="sm-step-number">STEP 03</span><span class="sm-step-icon"><i class="ph ph-eye" aria-hidden="true"></i></span><h3>View the results</h3><p>Explore the public information or media returned by the tool. Private and restricted content stays private.</p></article></div></section></div>
+    <div class="sm-section-band sm-band-how"><section class="sm-container sm-how" aria-labelledby="tool-how-title"><div class="sm-how-intro"><p class="sm-kicker">Simple & Transparent</p><h2 id="tool-how-title">Using {{ $toolConfig['name'] }}.</h2><p>Start with the right input. Review only what {{ $meta['name'] }} makes publicly available.</p></div><div class="sm-steps"><article class="sm-step-card"><span class="sm-step-number">STEP 01</span><span class="sm-step-icon"><i class="ph ph-link" aria-hidden="true"></i></span><h3>Enter your input</h3><p>{{ $pageContent['input'] }} Example: {{ $pageContent['example'] }}. {{ $pageContent['example_note'] }}</p></article><article class="sm-step-card"><span class="sm-step-number">STEP 02</span><span class="sm-step-icon"><i class="ph ph-shield-check" aria-hidden="true"></i></span><h3>Verify and submit</h3><p>Enter the security code shown beside the field, then submit your input to start the lookup.</p></article><article class="sm-step-card"><span class="sm-step-number">STEP 03</span><span class="sm-step-icon"><i class="ph ph-eye" aria-hidden="true"></i></span><h3>View the results</h3><p>{{ $pageContent['result'] }}</p></article></div></section></div>
     @if(count($similar))
     <div class="sm-section-band"><section class="sm-container" aria-labelledby="related-tools-title"><div class="sm-section-heading"><div><p class="sm-kicker">More from {{ $meta['name'] }}</p><h2 id="related-tools-title">Need a different view?</h2><p class="sm-section-sub">Other {{ $meta['name'] }} tools for your next lookup.</p></div><a class="sm-text-link" href="{{ route('viewer.tool', ['platform' => $platform]) }}">All {{ $meta['name'] }} tools <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div><div class="sm-tool-grid">
         @foreach($similar as $related)

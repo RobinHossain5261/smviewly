@@ -1,5 +1,6 @@
 ﻿@extends('layouts.app')
 @section('title', 'Social Media Tips & Guides | '.$siteSettings->brand_name)
+@section('canonical', $canonicalUrl)
 @section('description', 'Practical guides to public Facebook pages, X media, Threads posts and LinkedIn profiles. Learn how to use smviewly and save available media responsibly.')
 @section('content')
 <div class="sm-home sm-blog-page">

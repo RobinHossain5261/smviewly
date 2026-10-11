@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 class SitemapBuilder
 {
-    public const CACHE_KEY = 'smviewer.sitemap.payload';
+    public const CACHE_KEY = 'smviewly.sitemap.payload';
 
     public static function flush(): void
     {
